@@ -1,0 +1,52 @@
+@let c = caseStudy();
+<article class="caso" [attr.aria-labelledby]="'caso-' + c.id" glozReveal>
+  <div class="texto">
+    @if (c.current) {
+      <p class="hoy">Hoy</p>
+    }
+    <h3 [id]="'caso-' + c.id">{{ c.client }}</h3>
+    <p class="sector">{{ c.sector }}</p>
+    <p class="resumen">{{ c.summary }}</p>
+    <div class="dato">
+      <p class="rotulo">Qué hicimos</p>
+      <ul class="chips">
+        @for (service of c.services; track service) {
+          <li>{{ service }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+
+  @switch (c.media.kind) {
+    @case ('photos') {
+      @let m = c.media;
+      <div class="medios" glozReveal="media">
+        @if (m.video; as video) {
+          <video class="principal" glozAutoplayInView [src]="video.src" [poster]="video.poster" muted loop playsinline preload="none" width="600" height="750" [attr.aria-label]="video.label"></video>
+        } @else {
+          <gloz-responsive-image class="principal" [image]="m.main" sizes="(min-width: 960px) 460px, 90vw" />
+        }
+        <gloz-logo class="firma" [decorative]="true" />
+        @if (m.extras.length) {
+          <div class="extras">
+            @for (extra of m.extras; track extra.path) {
+              <gloz-responsive-image class="extra" [image]="extra" sizes="140px" />
+            }
+          </div>
+        }
+      </div>
+    }
+    @case ('logo') {
+      @let m = c.media;
+      <div class="medios medios--marca sobre-azul" glozReveal="media">
+        <i class="logo-cliente" role="img" [attr.aria-label]="m.logo.name" [style.mask-image]="'url(' + m.logo.file + ')'" [style.aspect-ratio]="m.logo.ratio"></i>
+        <ul class="destacados" aria-label="Qué llevamos">
+          @for (h of m.highlights; track h) {
+            <li>{{ h }}</li>
+          }
+        </ul>
+        <gloz-logo class="firma" [decorative]="true" />
+      </div>
+    }
+  }
+</article>

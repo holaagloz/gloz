@@ -1,0 +1,211 @@
+/* Base, tipografía compartida y piezas que usan varias secciones. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 16px;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: inherit;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.oscuro :focus-visible,
+.sobre-azul :focus-visible {
+  outline-color: #fff;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.saltar {
+  position: absolute;
+  left: 16px;
+  top: -80px;
+  z-index: 100;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+.saltar:focus {
+  top: 16px;
+}
+
+/* Contenedores y secciones */
+.contenedor {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.seccion {
+  padding-block: var(--section-y);
+}
+.oscuro {
+  color: #fff;
+  background-color: var(--ink);
+  background-image: var(--tx-noise), var(--tx-pana);
+  background-size: 220px, auto;
+}
+.sobre-azul {
+  color: #fff;
+  background-color: var(--brand);
+  background-image: var(--tx-noise), var(--tx-pana);
+  background-size: 220px, auto;
+}
+.acanalado {
+  background-color: var(--bg);
+  background-image: var(--tx-acanalado);
+}
+
+/* Títulos de sección */
+.titulo {
+  margin: 0 0 16px;
+  max-width: 18ch;
+  font-size: clamp(30px, 4.6vw, 54px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.titulo em {
+  font-style: normal;
+  font-weight: 300;
+}
+.entrada {
+  max-width: 40em;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(16px, 1.3vw, 18px);
+}
+.oscuro .entrada {
+  color: rgb(237 242 241 / 82%);
+}
+.sobre-azul .entrada {
+  color: var(--on-brand-soft);
+}
+
+/* Marcador visible: dato que falta y no se publica así */
+.marcador {
+  display: inline-block;
+  padding: 0.12em 0.5em;
+  border-radius: 6px;
+  background: var(--marcador);
+  color: #1d1d1d;
+  font-weight: 700;
+  font-size: 0.9em;
+}
+
+/* Etiqueta de anotación (flechas de la marca) */
+.etiqueta {
+  position: absolute;
+  translate: -50% 0;
+  white-space: nowrap;
+  font-size: clamp(11px, 1vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* Máscaras de SplitText con aire para colitas y cursivas */
+.linea-mask,
+.palabra-mask {
+  padding: 0.15em 0.12em 0.15em 0;
+  margin: -0.15em -0.12em -0.15em 0;
+}
+
+/* Estados ocultos solo con JS; rescate por tiempo si algo falla */
+.js [data-hero-in] {
+  visibility: hidden;
+  animation: rescate 0s 4s forwards;
+}
+.js [data-hero-trazo] {
+  opacity: 0;
+  animation: rescate-opacidad 0s 4s forwards;
+}
+@keyframes rescate {
+  to {
+    visibility: visible;
+  }
+}
+@keyframes rescate-opacidad {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Lenis 1.3.11 */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+  .js [data-hero-in] {
+    visibility: visible;
+  }
+  .js [data-hero-trazo] {
+    opacity: 1;
+  }
+}

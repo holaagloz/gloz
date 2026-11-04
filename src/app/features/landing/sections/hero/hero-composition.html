@@ -1,0 +1,25 @@
+<figure class="compo" [attr.aria-label]="'Piezas de contenido que hicimos para ' + clients">
+  <svg class="flechas" viewBox="0 0 400 380" aria-hidden="true" focusable="false" data-hero-in>
+    <path data-flecha data-hero-trazo d="M74 64 C70 52 62 42 52 36 M52 36 l9 1 M52 36 l3 8" />
+    <path data-flecha data-hero-trazo d="M346 92 C346 74 342 56 336 40 M336 40 l-4 8 M336 40 l6 6" />
+    <path data-flecha data-hero-trazo d="M84 290 C82 306 72 322 60 336 M60 336 l1-9 M60 336 l8-4" />
+    <path data-flecha data-hero-trazo d="M200 290 C202 306 202 322 200 336 M200 336 l-4-8 M200 336 l5-7" />
+    <path data-flecha data-hero-trazo d="M318 290 C326 308 334 322 344 336 M344 336 l-9-2 M344 336 l-1-9" />
+  </svg>
+
+  @for (label of labels; track label.text) {
+    <span class="etiqueta" aria-hidden="true" data-hero-in data-etiqueta [style.left.%]="label.left" [style.top.%]="label.top">{{ label.text }}</span>
+  }
+
+  @for (piece of pieces; track piece.client; let i = $index) {
+    <div class="pieza" [class]="'pieza--' + i" data-pieza data-hero-in [attr.data-camino-desde]="i === 1 ? '' : null">
+      <gloz-responsive-image [image]="piece.image" sizes="(min-width: 1000px) 240px, 38vw" [priority]="true" />
+      <span class="cliente">{{ piece.client }}</span>
+      @if (piece.signed) {
+        <gloz-logo class="firma" [decorative]="true" />
+      }
+    </div>
+  }
+
+  <gloz-search-pill class="buscador" [topics]="topics" data-hero-in data-buscador />
+</figure>

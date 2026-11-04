@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gloz · Dirección de arte</title>
+<meta name="robots" content="noindex">
+<link rel="preload" href="fonts/montserrat-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/yeseva-one-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
+<style>
+@font-face{font-family:"Montserrat";src:url(fonts/montserrat-latin-var.woff2) format("woff2");font-weight:300 800;font-display:swap}
+@font-face{font-family:"Yeseva One";src:url(fonts/yeseva-one-latin-400.woff2) format("woff2");font-weight:400;font-display:swap}
+
+:root{
+  /* Color: libro de marca Gloz */
+  --brand:#024AA9;          /* azul vivido, principal */
+  --brand-press:#023C8A;
+  --brand-soft:#DCE6F6;
+  --on-brand-soft:#C9DBFF;  /* texto de apoyo sobre azul */
+  --brand-on-dark:#8DB4FF;  /* azul para texto sobre azul oscuro */
+  --ink:#172547;            /* azul oscuro */
+  --bg:#EDF2F1;             /* gris claro */
+  --surface:#FFFFFF;
+  --line:rgba(23,37,71,.14);
+  --muted:#4A5672;
+  --cta:var(--brand); --cta-ink:#FFFFFF;
+  /* Tipografía */
+  --font-body:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-accent:"Yeseva One",Georgia,serif;
+  /* Forma */
+  --r-xl:28px; --r-lg:20px; --r-md:14px; --r-sm:10px;
+  /* Movimiento */
+  --ease:cubic-bezier(.25,1,.5,1);
+  --ease-io:cubic-bezier(.76,0,.24,1);
+  --ease-pop:cubic-bezier(.34,1.4,.64,1);
+  --dur:.9s; --dist:22px; --t-hover:.35s;
+  /* Espacio */
+  --gutter:clamp(16px,4vw,48px);
+  --maxw:1180px;
+  --section-y:clamp(64px,9vw,120px);
+  /* Texturas */
+  --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --pana:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 3px,rgba(0,0,0,.06) 3px 4px,transparent 4px 5px);
+  --acanalado:repeating-linear-gradient(90deg,rgba(255,255,255,.55) 0 2px,rgba(23,37,71,.035) 3px 6px,rgba(255,255,255,0) 7px 8px);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brand-on-dark);outline-offset:3px;border-radius:6px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* Lenis 1.3.11 */
+html.lenis,html.lenis body{height:auto}
+.lenis:not(.lenis-autoToggle).lenis-stopped{overflow:clip}
+.lenis [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-smooth iframe{pointer-events:none}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+
+/* ===== Logo ===== */
+.logo{height:1em;width:auto;fill:currentColor;overflow:visible}
+.logo__pieza{transform-box:fill-box;transform-origin:50% 100%}
+
+/* ===== Botón ===== */
+.btn{--b-bg:var(--cta);--b-ink:var(--cta-ink);--b-hover:var(--brand-press);
+  display:inline-flex;align-items:center;gap:.7em;min-height:52px;padding:.85em 1.4em .85em 1.5em;border-radius:999px;border:0;
+  background:var(--b-bg);color:var(--b-ink);font:700 15px/1.2 var(--font-body);letter-spacing:.01em;text-decoration:none;cursor:pointer;
+  transition:background-color var(--t-hover) var(--ease),scale .18s var(--ease)}
+.btn:hover{background:var(--b-hover)}
+.btn:active{scale:.97}
+.btn__flecha{width:18px;height:18px;flex:none;transition:translate var(--t-hover) var(--ease)}
+.btn__flecha path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn:hover .btn__flecha{translate:3px -3px}
+.btn--claro{--b-bg:#fff;--b-ink:var(--brand);--b-hover:var(--bg)}
+.btn--chico{min-height:44px;padding:.6em 1.1em;font-size:14px}
+
+/* ===== Portada ===== */
+.portada-wrap{background:var(--ink);padding:10px 10px 0}
+.portada{position:relative;isolation:isolate;overflow:hidden;border-radius:var(--r-lg);color:#fff;
+  background-color:var(--brand);background-image:var(--noise),var(--pana);background-size:220px,auto;
+  padding:14px clamp(18px,4vw,56px) 28px}
+.portada::after{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.22);border-radius:calc(var(--r-lg) - 6px);pointer-events:none;z-index:-1}
+.portada__nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+.portada__nav .logo{font-size:24px}
+.portada__links{display:none;gap:28px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500}
+.portada__links a{text-decoration:none;padding:10px 2px;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size var(--t-hover) var(--ease)}
+.portada__links a:hover{background-size:100% 1px}
+.portada__grid{display:grid;gap:28px;padding-top:22px}
+.portada__ceja{margin:0 0 14px;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--on-brand-soft)}
+.portada__titulo{margin:0;font-weight:800;text-transform:uppercase;line-height:1;letter-spacing:-.01em}
+.portada__titulo .l1{display:block;font-weight:300;font-size:clamp(23px,6.4vw,40px);letter-spacing:.02em}
+.portada__titulo .l2{display:block;font-size:clamp(44px,12.5vw,84px);letter-spacing:-.02em;margin-top:.04em}
+.portada__titulo .l3{display:block;font-family:var(--font-accent);font-weight:400;text-transform:none;font-size:clamp(50px,14.4vw,104px);line-height:1.02;letter-spacing:-.01em;margin-top:-.02em}
+.portada__texto{max-width:34em;margin:18px 0 26px;font-size:clamp(15px,1.25vw,17px);color:var(--bg)}
+.portada__accion{position:relative;z-index:2;display:inline-flex}
+.portada__lado{display:none}
+
+/* Composición: piezas de contenido reales con flechas de anotación */
+.compo{position:relative;width:100%;max-width:560px;margin-inline:auto;aspect-ratio:400/380}
+.compo__flechas{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.compo__flechas path,.diagrama__flechas path,.camino path{fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.pieza{position:absolute;margin:0;aspect-ratio:4/5;border-radius:var(--r-md);overflow:hidden;background:var(--ink);
+  border:3px solid #fff;box-shadow:0 26px 40px -22px rgba(8,18,48,.75)}
+.pieza img{width:100%;height:100%;object-fit:cover}
+.pieza--a{left:4%;top:18.4%;width:36%;rotate:-6deg;z-index:1}
+.pieza--b{left:37%;top:8.9%;width:38%;rotate:2deg;z-index:3}
+.pieza--c{left:62%;top:26%;width:34%;rotate:7deg;z-index:2}
+.pieza__cliente{position:absolute;left:5px;top:6px;padding:2px 6px;border-radius:999px;background:#fff;color:var(--ink);font-size:11px;font-weight:600;line-height:1.4;white-space:nowrap}
+.pieza--c .pieza__cliente{left:auto;right:7px}
+.pieza__firma{position:absolute;right:9px;bottom:7px;color:#fff;font-size:13px;filter:drop-shadow(0 1px 3px rgba(0,0,0,.5))}
+.etiqueta{position:absolute;translate:-50% 0;white-space:nowrap;font-size:clamp(11px,1vw,13px);font-weight:600;letter-spacing:.02em;color:#fff;line-height:1.2}
+.buscador{position:absolute;left:50%;top:60.5%;translate:-50% 0;z-index:4;display:flex;align-items:center;gap:8px;
+  padding:9px 16px 9px 12px;border-radius:999px;background:#fff;color:var(--ink);font-size:clamp(12px,1.1vw,14px);font-weight:500;white-space:nowrap;
+  box-shadow:0 18px 30px -16px rgba(8,18,48,.6)}
+.buscador svg{width:16px;height:16px;flex:none}
+.buscador svg :is(circle,path){fill:none;stroke:var(--brand);stroke-width:2.2;stroke-linecap:round}
+.buscador b{color:var(--brand);font-weight:700;display:inline-block}
+.camino{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:1}
+
+.js [data-hero-in]{visibility:hidden;animation:rescate 0s 4s forwards}
+.js .camino path,.js [data-flechas] path{opacity:0;animation:rescateOp 0s 4s forwards}
+@keyframes rescateOp{to{opacity:1}}
+@keyframes rescate{to{visibility:visible}}
+
+.muestra__controles{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 16px;margin:0;padding:14px 16px 18px;background:var(--ink);color:var(--bg);font-size:13px}
+.muestra__repetir{min-height:44px;padding:.5em 1.2em;border-radius:999px;border:1px solid rgba(237,242,241,.5);background:transparent;color:#fff;font:600 14px var(--font-body);cursor:pointer}
+.muestra__repetir:hover{background:rgba(255,255,255,.08)}
+
+/* ===== Hoja ===== */
+.hoja{max-width:var(--maxw);margin-inline:auto;padding:0 var(--gutter)}
+.bloque{padding:var(--section-y) 0 0}
+.bloque:last-child{padding-bottom:var(--section-y)}
+.ceja{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brand)}
+.ceja::before{content:"";width:22px;height:1.5px;background:currentColor}
+.h2{margin:0 0 14px;font-size:clamp(28px,4.4vw,48px);font-weight:800;line-height:1.06;letter-spacing:-.015em;text-transform:uppercase}
+.h2 em{font-style:normal;font-weight:300}
+.lead{max-width:40em;margin:0 0 28px;color:var(--muted)}
+.aviso{display:inline-block;margin:28px 0 0;padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:12px;font-weight:600;color:var(--muted)}
+
+/* Paleta */
+.paleta{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.color{display:flex;flex-direction:column;justify-content:flex-end;min-height:170px;padding:16px;border-radius:var(--r-md);font-size:13px;line-height:1.45}
+.color b{display:block;font-size:15px}
+.color span{display:block;margin-top:2px;font-weight:600;letter-spacing:.04em;opacity:.9}
+.color p{margin:8px 0 0}
+.color--grande{grid-column:1/-1;min-height:200px}
+.color--apoyo{min-height:120px}
+.color--borde{border:1px solid var(--line)}
+
+/* Letras */
+.letras{display:grid;gap:14px}
+.muestra-letra{padding:22px;border-radius:var(--r-lg);background:var(--surface)}
+.muestra-letra small{display:block;margin-bottom:10px;font-size:12px;font-weight:600;color:var(--muted)}
+.muestra-letra__yeseva{margin:0;font-family:var(--font-accent);font-size:clamp(34px,6vw,60px);line-height:1.05;color:var(--brand)}
+.muestra-letra__titulo{margin:0;font-size:clamp(24px,3.6vw,38px);font-weight:800;line-height:1.08;text-transform:uppercase}
+.muestra-letra__titulo span{display:block;font-weight:300}
+.muestra-letra p{margin:0;color:var(--muted)}
+
+/* Elementos */
+.elementos{display:grid;gap:14px}
+.elemento{position:relative;overflow:hidden;padding:22px;border-radius:var(--r-lg)}
+.elemento:not(.elemento--azul){background:var(--surface)}
+.elemento h3{margin:0 0 4px;font-size:16px;font-weight:700}
+.elemento > p{margin:0 0 18px;font-size:14px;color:var(--muted)}
+.diagrama{position:relative;width:100%;max-width:520px;margin:0 auto;aspect-ratio:360/260;color:var(--ink)}
+.diagrama__flechas{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.diagrama__flechas path{stroke:var(--brand)}
+.diagrama__centro{position:absolute;left:50%;top:50%;translate:-50% -50%;text-align:center;white-space:nowrap;line-height:1}
+.diagrama__centro b{display:block;font-size:clamp(17px,2.4vw,24px);font-weight:800}
+.diagrama__centro i{display:block;font-family:var(--font-accent);font-style:normal;font-size:clamp(28px,4vw,40px);color:var(--brand);margin-top:2px}
+.diagrama .etiqueta{color:var(--ink);font-weight:600;font-size:clamp(11px,1.2vw,13px)}
+.ver-mov{margin-top:16px;min-height:44px;padding:.5em 1.1em;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:600 13px var(--font-body);cursor:pointer}
+.ver-mov:hover{border-color:var(--brand);color:var(--brand)}
+.elemento--azul{background-color:var(--brand);background-image:var(--noise),var(--pana);background-size:220px,auto;color:#fff}
+.elemento--azul > p:not(.buscador){color:var(--on-brand-soft)}
+.buscador--suelto{position:relative;left:auto;top:auto;translate:none;display:inline-flex;max-width:100%;white-space:normal;margin:0}
+.texturas{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.textura{aspect-ratio:3/4;border-radius:var(--r-sm);display:flex;align-items:flex-end;padding:10px;font-size:12px;font-weight:600}
+.textura--pana{background-color:var(--ink);background-image:var(--noise),var(--pana);background-size:220px,auto;color:#fff}
+.textura--acanalado{background-color:#F3EEE4;background-image:var(--acanalado);color:var(--ink);border:1px solid var(--line)}
+.textura--concreto{background-color:#AFC3D7;background-image:var(--noise),radial-gradient(120% 90% at 30% 20%,#B9CCDF,#9FB6CC);background-size:160px,auto;color:var(--ink)}
+.firma-demo{position:relative;max-width:260px;aspect-ratio:4/5;border-radius:var(--r-md);overflow:hidden;margin:0}
+.firma-demo img{width:100%;height:100%;object-fit:cover}
+.firma-demo .logo{position:absolute;left:14px;bottom:14px;font-size:22px;color:#fff;filter:drop-shadow(0 1px 4px rgba(0,0,0,.45))}
+
+/* Botón y tarjeta */
+.botones{display:grid;gap:14px;margin-bottom:22px}
+.botones__panel{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:22px;border-radius:var(--r-lg)}
+.botones__panel:not(.botones__panel--azul){background:var(--surface)}
+.botones__panel small{font-size:12px;font-weight:600;color:var(--muted)}
+.botones__panel--azul{background-color:var(--brand);background-image:var(--noise),var(--pana);background-size:220px,auto}
+.botones__panel--azul small{color:var(--on-brand-soft)}
+.caso{display:grid;border-radius:var(--r-lg);overflow:hidden;background:var(--surface);box-shadow:0 30px 60px -40px rgba(23,37,71,.45)}
+.caso__texto{padding:24px}
+.caso__texto h3{margin:0 0 8px;font-size:22px;font-weight:800}
+.caso__texto p{margin:0 0 18px;font-size:15px;color:var(--muted)}
+.caso__dato{padding:12px 0;border-top:1px solid var(--line);font-size:13px}
+.caso__dato small{display:block;color:var(--muted);margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.chips li{padding:5px 11px;border-radius:999px;background:var(--brand-soft);color:var(--ink);font-size:12.5px;font-weight:600}
+.caso__img{position:relative;min-height:300px;margin:0;background:var(--ink)}
+.caso__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.caso__img .logo{position:absolute;left:16px;bottom:16px;font-size:22px;color:#fff}
+
+@media (min-width:700px){
+  .paleta{grid-template-columns:repeat(4,1fr)}
+  .color--grande{grid-column:span 2;min-height:240px}
+  .letras{grid-template-columns:1.1fr 1fr}
+  .muestra-letra--ancha{grid-column:1/-1}
+  .elementos{grid-template-columns:1fr 1fr}
+  .elemento--ancho{grid-column:1/-1}
+  .botones{grid-template-columns:1fr 1fr}
+  .caso{grid-template-columns:1fr 1fr}
+  .caso__texto{padding:36px}
+}
+@media (min-width:1000px){
+  .portada-wrap{padding:16px 16px 0}
+  .portada{display:flex;flex-direction:column;border-radius:var(--r-xl);padding:18px 72px 48px 64px;min-height:min(calc(100svh - 16px),900px)}
+  .portada::after{inset:10px;border-radius:calc(var(--r-xl) - 8px)}
+  .portada__nav{min-height:72px}
+  .portada__nav .logo{font-size:28px}
+  .portada__ceja{font-size:12px;letter-spacing:.16em}
+  .compo{max-width:640px}
+  .portada__links{display:flex}
+  .portada__grid{flex:1;grid-template-columns:1fr 1.1fr;align-items:center;gap:40px;padding:0 0 min(4vh,32px)}
+  .portada__lado{display:block;position:absolute;right:26px;top:50%;translate:0 -50%;writing-mode:vertical-rl;rotate:180deg;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--on-brand-soft)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .js .camino path,.js [data-flechas] path{opacity:1}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
+  .js [data-hero-in]{visibility:visible}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== INICIO Portada ===== -->
+<div class="portada-wrap">
+  <header class="portada" data-portada>
+    <svg class="camino" aria-hidden="true" focusable="false"><path/></svg>
+    <nav class="portada__nav" aria-label="Principal">
+      <a href="#" aria-label="Gloz, inicio" data-hero-in>
+        <svg class="logo" data-logo viewBox="4.5 -71.5 211 73" role="img" aria-label="Gloz"><path class="logo__pieza" d="M32.50 1.50Q24.90 1.50 18.50-2.80Q12.10-7.10 8.30-15.35Q4.50-23.60 4.50-35L4.50-35Q4.50-46.50 8.45-54.75Q12.40-63 19.55-67.25Q26.70-71.50 36.10-71.50L36.10-71.50Q41.80-71.50 47.60-68.20L47.60-68.20Q49.80-67 52-65L52-65Q53.70-67.60 55.50-69.10L55.50-69.10Q57.30-70.40 57.50-70.50L57.50-70.50L60-70.50L60-51.50L56-51.50Q54.70-56.30 52.10-60.20L52.10-60.20Q49.70-64 46.15-66.50Q42.60-69 38-69L38-69Q31.10-69 26.55-61Q22-53 22-35L22-35Q22-17 26.05-9.50Q30.10-2 36.50-2L36.50-2Q40.20-2 43.20-6L43.20-6Q44.30-7.50 45.50-10L45.50-10L45.50-33L39.50-34.50L39.50-36L68-36L68-34.50L62-33L62 0.50L60.50 0.50Q53.20 0.50 49.40-3.50L49.40-3.50Q47.70-5.30 47-7.50L47-7.50Q45.60-5 43.70-3L43.70-3Q39.20 1.50 32.50 1.50L32.50 1.50Z"/><path class="logo__pieza" d="M74 0L74-1.50L80-3L80-67L74-68.50L74-70L87-70Q96-70 96-61L96-61L96-3L102-1.50L102 0L74 0Z"/><path class="logo__pieza" d="M134.50 1.50Q122.10 1.50 115.05-5.55Q108-12.60 108-25L108-25Q108-37.40 115.05-44.45Q122.10-51.50 134.50-51.50L134.50-51.50Q146.90-51.50 153.95-44.45Q161-37.40 161-25L161-25Q161-12.60 153.95-5.55Q146.90 1.50 134.50 1.50L134.50 1.50ZM134.50-0.50Q138.50-0.50 141.25-6.10Q144-11.70 144-25L144-25Q144-38.30 141.25-43.90Q138.50-49.50 134.50-49.50L134.50-49.50Q130.50-49.50 127.75-43.90Q125-38.30 125-25L125-25Q125-11.70 127.75-6.10Q130.50-0.50 134.50-0.50L134.50-0.50Z"/><path class="logo__pieza" d="M169 0L169-2.50L197.50-47.50L179.50-47.50Q179.50-42 176.20-36.40L176.20-36.40Q174.90-34.30 173-32.50L173-32.50L170-32.50L170-50L215.50-50L215.50-47.50L187-2.50L206-2.50Q206-8.20 209.20-13.60L209.20-13.60Q210.60-15.90 212.50-17.50L212.50-17.50L215.50-17.50L215.50 0L169 0Z"/></svg>
+      </a>
+      <ul class="portada__links" data-hero-in>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Trabajos</a></li>
+        <li><a href="#">Nosotros</a></li>
+      </ul>
+      <a class="btn btn--claro btn--chico" href="#" data-hero-in>Escríbenos</a>
+    </nav>
+
+    <div class="portada__grid">
+      <div>
+        <p class="portada__ceja" data-hero-in data-sube>Gloz Studio · Marketing y software</p>
+        <h1 class="portada__titulo" data-hero-in>
+          <span class="l1" data-palabras>Detrás de cada post</span>
+          <span class="l2" data-palabras>hay una</span>
+          <span class="l3" data-palabras>estrategia.</span>
+        </h1>
+        <p class="portada__texto" data-hero-in data-sube>Campañas en Meta Ads, contenido que se nota y software a medida. Nos metemos en tu negocio como si fuera nuestro: entendemos, proponemos y resolvemos.</p>
+        <a class="btn btn--claro portada__accion" href="#" data-hero-in data-sube data-camino-hasta>
+          Escríbenos por WhatsApp
+          <svg class="btn__flecha" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 14 14 4M6 4h8v8"/></svg>
+        </a>
+      </div>
+
+      <figure class="compo" aria-label="Piezas de contenido que hicimos para Burguer House, Tienda del Oro y @Cafe" style="margin:0">
+        <svg class="compo__flechas" data-flechas data-hero-in viewBox="0 0 400 380" aria-hidden="true" focusable="false">
+          <path d="M74 64 C70 52 62 42 52 36 M52 36 l9 1 M52 36 l3 8"/>
+          <path d="M346 92 C346 74 342 56 336 40 M336 40 l-4 8 M336 40 l6 6"/>
+          <path d="M84 290 C82 306 72 322 60 336 M60 336 l1-9 M60 336 l8-4"/>
+          <path d="M200 290 C202 306 202 322 200 336 M200 336 l-4-8 M200 336 l5-7"/>
+          <path d="M318 290 C326 308 334 322 344 336 M344 336 l-9-2 M344 336 l-1-9"/>
+        </svg>
+        <span class="etiqueta" data-etiqueta data-hero-in style="left:12%;top:2%">Ideas</span>
+        <span class="etiqueta" data-etiqueta data-hero-in style="left:84%;top:2%">Producción</span>
+        <span class="etiqueta" data-etiqueta data-hero-in style="left:14%;top:90.5%">Edición</span>
+        <span class="etiqueta" data-etiqueta data-hero-in style="left:50%;top:90.5%">Pauta en Meta</span>
+        <span class="etiqueta" data-etiqueta data-hero-in style="left:87%;top:90.5%">Análisis</span>
+
+        <figure class="pieza pieza--a" data-pieza data-hero-in>
+          <img src="img/burguer-house-480.webp" srcset="img/burguer-house-480.webp 480w, img/burguer-house-800.webp 800w" sizes="(min-width:1000px) 200px, 36vw" width="480" height="600" alt="Hamburguesa doble con huevo y tocino sobre fondo rojo, para Burguer House">
+          <span class="pieza__cliente">Burguer House</span>
+        </figure>
+        <figure class="pieza pieza--b" data-pieza data-hero-in data-camino-desde>
+          <img src="img/tienda-del-oro-480.webp" srcset="img/tienda-del-oro-480.webp 480w, img/tienda-del-oro-800.webp 800w" sizes="(min-width:1000px) 220px, 38vw" width="480" height="600" alt="Cadena de oro sobre un busto azul oscuro, para Tienda del Oro">
+          <span class="pieza__cliente">Tienda del Oro</span>
+          <svg class="logo pieza__firma" viewBox="4.5 -71.5 211 73" aria-hidden="true"><path class="logo__pieza" d="M32.50 1.50Q24.90 1.50 18.50-2.80Q12.10-7.10 8.30-15.35Q4.50-23.60 4.50-35L4.50-35Q4.50-46.50 8.45-54.75Q12.40-63 19.55-67.25Q26.70-71.50 36.10-71.50L36.10-71.50Q41.80-71.50 47.60-68.20L47.60-68.20Q49.80-67 52-65L52-65Q53.70-67.60 55.50-69.10L55.50-69.10Q57.30-70.40 57.50-70.50L57.50-70.50L60-70.50L60-51.50L56-51.50Q54.70-56.30 52.10-60.20L52.10-60.20Q49.70-64 46.15-66.50Q42.60-69 38-69L38-69Q31.10-69 26.55-61Q22-53 22-35L22-35Q22-17 26.05-9.50Q30.10-2 36.50-2L36.50-2Q40.20-2 43.20-6L43.20-6Q44.30-7.50 45.50-10L45.50-10L45.50-33L39.50-34.50L39.50-36L68-36L68-34.50L62-33L62 0.50L60.50 0.50Q53.20 0.50 49.40-3.50L49.40-3.50Q47.70-5.30 47-7.50L47-7.50Q45.60-5 43.70-3L43.70-3Q39.20 1.50 32.50 1.50L32.50 1.50Z"/><path class="logo__pieza" d="M74 0L74-1.50L80-3L80-67L74-68.50L74-70L87-70Q96-70 96-61L96-61L96-3L102-1.50L102 0L74 0Z"/><path class="logo__pieza" d="M134.50 1.50Q122.10 1.50 115.05-5.55Q108-12.60 108-25L108-25Q108-37.40 115.05-44.45Q122.10-51.50 134.50-51.50L134.50-51.50Q146.90-51.50 153.95-44.45Q161-37.40 161-25L161-25Q161-12.60 153.95-5.55Q146.90 1.50 134.50 1.50L134.50 1.50ZM134.50-0.50Q138.50-0.50 141.25-6.10Q144-11.70 144-25L144-25Q144-38.30 141.25-43.90Q138.50-49.50 134.50-49.50L134.50-49.50Q130.50-49.50 127.75-43.90Q125-38.30 125-25L125-25Q125-11.70 127.75-6.10Q130.50-0.50 134.50-0.50L134.50-0.50Z"/><path class="logo__pieza" d="M169 0L169-2.50L197.50-47.50L179.50-47.50Q179.50-42 176.20-36.40L176.20-36.40Q174.90-34.30 173-32.50L173-32.50L170-32.50L170-50L215.50-50L215.50-47.50L187-2.50L206-2.50Q206-8.20 209.20-13.60L209.20-13.60Q210.60-15.90 212.50-17.50L212.50-17.50L215.50-17.50L215.50 0L169 0Z"/></svg>
+        </figure>
+        <figure class="pieza pieza--c" data-pieza data-hero-in>
+          <img src="img/cafe-480.webp" srcset="img/cafe-480.webp 480w, img/cafe-800.webp 800w" sizes="(min-width:1000px) 190px, 34vw" width="480" height="600" alt="Mano sosteniendo un latte junto a plantas, para @Cafe">
+          <span class="pieza__cliente">@Cafe</span>
+        </figure>
+
+        <p class="buscador" data-buscador data-hero-in aria-hidden="true">
+          <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg>
+          <span>¿Quién hace contenido para <b data-giro>hamburgueserías</b>?</span>
+        </p>
+      </figure>
+    </div>
+    <p class="portada__lado" aria-hidden="true">Marketing · Contenido · Software</p>
+  </header>
+</div>
+<p class="muestra__controles">
+  <button type="button" class="muestra__repetir" data-ver-de-nuevo>Ver de nuevo</button>
+  <span data-aviso-rm hidden>Tienes activado "Reducir movimiento": aquí ves una versión sin desplazamientos. Apágalo para ver la animación completa.</span>
+</p>
+<!-- ===== FIN Portada ===== -->
+
+<main class="hoja">
+
+  <!-- ===== INICIO Intro ===== -->
+  <section class="bloque">
+    <p class="ceja">Dirección de arte</p>
+    <h2 class="h2" data-split>Lo que hay <em>detrás</em></h2>
+    <p class="lead" data-reveal>La idea sale de tu propio post "Solo quiero un video": un pedido simple rodeado de flechas que muestran todo el trabajo que hay detrás. Así se ve y se mueve tu página: tus azules, tus letras y fotos reales de tus clientes.</p>
+    <span class="aviso">Hoja de muestra · no se publica</span>
+  </section>
+  <!-- ===== FIN Intro ===== -->
+
+  <!-- ===== INICIO Colores ===== -->
+  <section class="bloque">
+    <p class="ceja">Tus colores</p>
+    <h2 class="h2" data-split>Azul que se reconoce</h2>
+    <div class="paleta">
+      <div class="color color--grande" style="background-color:#024AA9;background-image:var(--noise),var(--pana);background-size:220px,auto;color:#fff" data-reveal>
+        <b>Azul vivido</b><span>#024AA9</span><p>Tu color principal: la portada, los botones sobre fondos claros y los detalles que importan.</p>
+      </div>
+      <div class="color color--grande" style="background-color:#172547;background-image:var(--noise),var(--pana);background-size:220px,auto;color:#fff" data-reveal>
+        <b>Azul oscuro</b><span>#172547</span><p>Los textos, la sección de trabajos y el pie de página. Le da la elegancia.</p>
+      </div>
+      <div class="color color--borde" style="background-color:#EDF2F1;background-image:var(--acanalado)" data-reveal>
+        <b>Gris claro</b><span>#EDF2F1</span><p>El fondo general: deja respirar las fotos.</p>
+      </div>
+      <div class="color color--borde" style="background:#fff" data-reveal>
+        <b>Blanco</b><span>#FFFFFF</span><p>Tarjetas, y el botón cuando va sobre azul.</p>
+      </div>
+      <div class="color color--apoyo" style="background:#C9DBFF" data-reveal>
+        <b>Celeste</b><span>#C9DBFF</span><p>Nuevo, sale de tu azul: textos de apoyo sobre azul.</p>
+      </div>
+      <div class="color color--apoyo" style="background:#DCE6F6" data-reveal>
+        <b>Azul suave</b><span>#DCE6F6</span><p>Nuevo, sale de tu azul: etiquetas de servicios.</p>
+      </div>
+    </div>
+  </section>
+  <!-- ===== FIN Colores ===== -->
+
+  <!-- ===== INICIO Letras ===== -->
+  <section class="bloque">
+    <p class="ceja">Tus letras</p>
+    <h2 class="h2" data-split>Montserrat manda, <em>Yeseva</em> acentúa</h2>
+    <div class="letras">
+      <div class="muestra-letra" data-reveal>
+        <small>Títulos · Montserrat fina y gruesa, en mayúsculas</small>
+        <p class="muestra-letra__titulo"><span>Marketing y</span>publicidad</p>
+      </div>
+      <div class="muestra-letra" data-reveal>
+        <small>Acento · Yeseva One, en pocas palabras</small>
+        <p class="muestra-letra__yeseva">entender, proponer y resolver</p>
+      </div>
+      <div class="muestra-letra muestra-letra--ancha" data-reveal>
+        <small>Párrafos · Montserrat</small>
+        <p>Nos involucramos en cada proyecto como si la marca fuera propia. Nos gusta entender el negocio, detectar qué necesita y buscar soluciones que vayan más allá de una tarea puntual.</p>
+      </div>
+    </div>
+  </section>
+  <!-- ===== FIN Letras ===== -->
+
+  <!-- ===== INICIO Elementos ===== -->
+  <section class="bloque">
+    <p class="ceja">Lo que hace única tu página</p>
+    <h2 class="h2" data-split>Tus elementos</h2>
+    <div class="elementos">
+      <div class="elemento elemento--ancho" data-reveal>
+        <h3>1. Flechas de anotación</h3>
+        <p>Salen de tu post "Solo quiero un video". Se dibujan solas al aparecer, en la portada, en "Nosotros" y en "Cómo trabajamos".</p>
+        <div class="diagrama" data-diagrama>
+          <svg class="diagrama__flechas" viewBox="0 0 360 260" aria-hidden="true" focusable="false">
+            <path d="M100 96 C92 80 80 62 64 46 M64 46 l9 2 M64 46 l2 9"/>
+            <path d="M180 90 C180 76 180 60 180 44 M180 44 l-5 8 M180 44 l5 8"/>
+            <path d="M260 96 C268 80 280 62 296 46 M296 46 l-9 2 M296 46 l-2 9"/>
+            <path d="M100 166 C92 182 80 198 64 214 M64 214 l2-9 M64 214 l9-2"/>
+            <path d="M180 172 C180 186 180 200 180 214 M180 214 l-5-8 M180 214 l5-8"/>
+            <path d="M260 166 C268 182 280 198 296 214 M296 214 l-9-2 M296 214 l-2-9"/>
+          </svg>
+          <span class="etiqueta" style="left:17%;top:5%">Ideas de contenido</span>
+          <span class="etiqueta" style="left:50%;top:5%">Producción</span>
+          <span class="etiqueta" style="left:83%;top:5%">Elegir las tomas</span>
+          <span class="etiqueta" style="left:17%;top:86%">Elegir la música</span>
+          <span class="etiqueta" style="left:50%;top:86%">Cambios</span>
+          <span class="etiqueta" style="left:83%;top:86%">Edición completa</span>
+          <p class="diagrama__centro" style="margin:0"><b>"Solo quiero</b><i>un video"</i></p>
+        </div>
+        <button type="button" class="ver-mov" data-ver-diagrama>Ver cómo se mueve</button>
+      </div>
+
+      <div class="elemento elemento--azul" data-reveal>
+        <h3>2. El buscador</h3>
+        <p>De tu post de barberías. En la portada va cambiando entre los rubros de tus clientes.</p>
+        <p class="buscador buscador--suelto" aria-hidden="true">
+          <svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg>
+          <span>¿Quién hace contenido para <b>joyerías</b>?</span>
+        </p>
+      </div>
+
+      <div class="elemento" data-reveal>
+        <h3>3. Tus texturas</h3>
+        <p>Muy suaves, de fondo, para que nada se vea plano. Las redibujé livianas para que la página cargue rápido.</p>
+        <div class="texturas">
+          <div class="textura textura--pana">Pana</div>
+          <div class="textura textura--acanalado">Acanalado</div>
+          <div class="textura textura--concreto">Concreto</div>
+        </div>
+      </div>
+
+      <div class="elemento elemento--ancho" data-reveal>
+        <h3>4. Tu firma en cada pieza</h3>
+        <p>Como en tu feed: "Gloz" chiquito en la esquina de cada trabajo. Y en el pie de página, tu nombre grande se arma letra por letra al llegar.</p>
+        <figure class="firma-demo">
+          <img src="img/burguer-house-480.webp" width="480" height="600" alt="Hamburguesa de Burguer House con la firma de Gloz en la esquina" loading="lazy">
+          <svg class="logo" viewBox="4.5 -71.5 211 73" aria-hidden="true"><path class="logo__pieza" d="M32.50 1.50Q24.90 1.50 18.50-2.80Q12.10-7.10 8.30-15.35Q4.50-23.60 4.50-35L4.50-35Q4.50-46.50 8.45-54.75Q12.40-63 19.55-67.25Q26.70-71.50 36.10-71.50L36.10-71.50Q41.80-71.50 47.60-68.20L47.60-68.20Q49.80-67 52-65L52-65Q53.70-67.60 55.50-69.10L55.50-69.10Q57.30-70.40 57.50-70.50L57.50-70.50L60-70.50L60-51.50L56-51.50Q54.70-56.30 52.10-60.20L52.10-60.20Q49.70-64 46.15-66.50Q42.60-69 38-69L38-69Q31.10-69 26.55-61Q22-53 22-35L22-35Q22-17 26.05-9.50Q30.10-2 36.50-2L36.50-2Q40.20-2 43.20-6L43.20-6Q44.30-7.50 45.50-10L45.50-10L45.50-33L39.50-34.50L39.50-36L68-36L68-34.50L62-33L62 0.50L60.50 0.50Q53.20 0.50 49.40-3.50L49.40-3.50Q47.70-5.30 47-7.50L47-7.50Q45.60-5 43.70-3L43.70-3Q39.20 1.50 32.50 1.50L32.50 1.50Z"/><path class="logo__pieza" d="M74 0L74-1.50L80-3L80-67L74-68.50L74-70L87-70Q96-70 96-61L96-61L96-3L102-1.50L102 0L74 0Z"/><path class="logo__pieza" d="M134.50 1.50Q122.10 1.50 115.05-5.55Q108-12.60 108-25L108-25Q108-37.40 115.05-44.45Q122.10-51.50 134.50-51.50L134.50-51.50Q146.90-51.50 153.95-44.45Q161-37.40 161-25L161-25Q161-12.60 153.95-5.55Q146.90 1.50 134.50 1.50L134.50 1.50ZM134.50-0.50Q138.50-0.50 141.25-6.10Q144-11.70 144-25L144-25Q144-38.30 141.25-43.90Q138.50-49.50 134.50-49.50L134.50-49.50Q130.50-49.50 127.75-43.90Q125-38.30 125-25L125-25Q125-11.70 127.75-6.10Q130.50-0.50 134.50-0.50L134.50-0.50Z"/><path class="logo__pieza" d="M169 0L169-2.50L197.50-47.50L179.50-47.50Q179.50-42 176.20-36.40L176.20-36.40Q174.90-34.30 173-32.50L173-32.50L170-32.50L170-50L215.50-50L215.50-47.50L187-2.50L206-2.50Q206-8.20 209.20-13.60L209.20-13.60Q210.60-15.90 212.50-17.50L212.50-17.50L215.50-17.50L215.50 0L169 0Z"/></svg>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <!-- ===== FIN Elementos ===== -->
+
+  <!-- ===== INICIO Botón y tarjeta ===== -->
+  <section class="bloque">
+    <p class="ceja">Un botón y una tarjeta</p>
+    <h2 class="h2" data-split>Un solo camino: <em>escribirte</em></h2>
+    <p class="lead" data-reveal>Todos los botones dicen lo mismo y llevan a tu WhatsApp con un mensaje ya escrito. Pasa el mouse o tócalo para ver cómo responde.</p>
+    <div class="botones">
+      <div class="botones__panel" data-reveal>
+        <small>Sobre fondo claro: azul con letra blanca</small>
+        <a class="btn" href="#">Escríbenos por WhatsApp <svg class="btn__flecha" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 14 14 4M6 4h8v8"/></svg></a>
+      </div>
+      <div class="botones__panel botones__panel--azul" data-reveal>
+        <small>Sobre azul: blanco con letra azul</small>
+        <a class="btn btn--claro" href="#">Escríbenos por WhatsApp <svg class="btn__flecha" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 14 14 4M6 4h8v8"/></svg></a>
+      </div>
+    </div>
+    <article class="caso" data-reveal>
+      <div class="caso__texto">
+        <h3>Tienda del Oro</h3>
+        <p>Fotos y videos de producto para sus redes: cadenas, anillos y aros sobre fondos oscuros que hacen brillar el oro.</p>
+        <div class="caso__dato"><small>Cliente</small>Tienda del Oro · Joyería</div>
+        <div class="caso__dato"><small>Qué hicimos</small>
+          <ul class="chips"><li>Producción de contenido</li><li>Edición de video</li></ul>
+        </div>
+      </div>
+      <figure class="caso__img">
+        <img src="img/tienda-del-oro-800.webp" width="800" height="1000" alt="Cadena de oro sobre un busto azul oscuro" loading="lazy">
+        <svg class="logo" viewBox="4.5 -71.5 211 73" aria-hidden="true"><path class="logo__pieza" d="M32.50 1.50Q24.90 1.50 18.50-2.80Q12.10-7.10 8.30-15.35Q4.50-23.60 4.50-35L4.50-35Q4.50-46.50 8.45-54.75Q12.40-63 19.55-67.25Q26.70-71.50 36.10-71.50L36.10-71.50Q41.80-71.50 47.60-68.20L47.60-68.20Q49.80-67 52-65L52-65Q53.70-67.60 55.50-69.10L55.50-69.10Q57.30-70.40 57.50-70.50L57.50-70.50L60-70.50L60-51.50L56-51.50Q54.70-56.30 52.10-60.20L52.10-60.20Q49.70-64 46.15-66.50Q42.60-69 38-69L38-69Q31.10-69 26.55-61Q22-53 22-35L22-35Q22-17 26.05-9.50Q30.10-2 36.50-2L36.50-2Q40.20-2 43.20-6L43.20-6Q44.30-7.50 45.50-10L45.50-10L45.50-33L39.50-34.50L39.50-36L68-36L68-34.50L62-33L62 0.50L60.50 0.50Q53.20 0.50 49.40-3.50L49.40-3.50Q47.70-5.30 47-7.50L47-7.50Q45.60-5 43.70-3L43.70-3Q39.20 1.50 32.50 1.50L32.50 1.50Z"/><path class="logo__pieza" d="M74 0L74-1.50L80-3L80-67L74-68.50L74-70L87-70Q96-70 96-61L96-61L96-3L102-1.50L102 0L74 0Z"/><path class="logo__pieza" d="M134.50 1.50Q122.10 1.50 115.05-5.55Q108-12.60 108-25L108-25Q108-37.40 115.05-44.45Q122.10-51.50 134.50-51.50L134.50-51.50Q146.90-51.50 153.95-44.45Q161-37.40 161-25L161-25Q161-12.60 153.95-5.55Q146.90 1.50 134.50 1.50L134.50 1.50ZM134.50-0.50Q138.50-0.50 141.25-6.10Q144-11.70 144-25L144-25Q144-38.30 141.25-43.90Q138.50-49.50 134.50-49.50L134.50-49.50Q130.50-49.50 127.75-43.90Q125-38.30 125-25L125-25Q125-11.70 127.75-6.10Q130.50-0.50 134.50-0.50L134.50-0.50Z"/><path class="logo__pieza" d="M169 0L169-2.50L197.50-47.50L179.50-47.50Q179.50-42 176.20-36.40L176.20-36.40Q174.90-34.30 173-32.50L173-32.50L170-32.50L170-50L215.50-50L215.50-47.50L187-2.50L206-2.50Q206-8.20 209.20-13.60L209.20-13.60Q210.60-15.90 212.50-17.50L212.50-17.50L215.50-17.50L215.50 0L169 0Z"/></svg>
+      </figure>
+    </article>
+  </section>
+  <!-- ===== FIN Botón y tarjeta ===== -->
+
+</main>
+
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/SplitText.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+  // 1. Ayudantes, banderas y tokens de movimiento de Gloz
+  const d = document, html = d.documentElement;
+  const $ = (s, c = d) => c.querySelector(s);
+  const $$ = (s, c = d) => [...c.querySelectorAll(s)];
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+  const safe = (fn) => { try { return fn(); } catch (e) { console.warn('[gloz]', e); } };
+  const M = { ease: 'power3.out', easeIO: 'power3.inOut', pop: 'back.out(1.2)', dur: 0.9, stagger: 0.06, dist: 22, lerp: 0.105 };
+
+  if (!hasGSAP) { html.classList.remove('js'); const r = $('[data-ver-de-nuevo]'); if (r) r.hidden = true; return; }
+  gsap.registerPlugin(ScrollTrigger);
+  if (window.SplitText) gsap.registerPlugin(SplitText);
+  ScrollTrigger.config({ ignoreMobileResize: true });
+
+  // 2. Lenis
+  let lenis = null;
+  if (!RM && window.Lenis && M.lerp) {
+    lenis = new Lenis({ lerp: M.lerp, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((t) => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+
+  // 3. El camino: flecha que sale de la pieza central y termina en el botón
+  const trazarCamino = () => {
+    const svg = $('.portada .camino'), hasta = $('[data-camino-hasta]');
+    let desde = $('[data-camino-desde]');
+    if (!svg || !desde || !hasta) return null;
+    const h = svg.getBoundingClientRect(), a = desde.getBoundingClientRect(), b = hasta.getBoundingClientRect();
+    svg.setAttribute('viewBox', `0 0 ${h.width} ${h.height}`);
+    const lado = a.left > b.right;   // escritorio: el botón queda a la izquierda de las piezas
+    const p0 = $('[data-pieza]');
+    const a0 = lado && p0 ? p0.getBoundingClientRect() : a;
+    let x1, y1, x2, y2, c;
+    if (lado) {
+      x1 = a0.left - h.left + 10; y1 = a0.bottom - h.top + 16;
+      x2 = b.right - h.left + 16; y2 = b.top - h.top + b.height * 0.5;
+      c = `C${x1 - 10},${y2 + 70} ${x2 + 140},${y2 + 30} ${x2},${y2}`;
+    } else {
+      x1 = a.left - h.left + a.width * 0.5; y1 = a.top - h.top - 12;
+      x2 = b.left - h.left + b.width * 0.72; y2 = b.bottom - h.top + 10;
+      c = `C${x1},${y1 - 30} ${x2 + 30},${y2 + 26} ${x2},${y2}`;
+    }
+    const ang = lado ? Math.atan2(y2 - (y2 + 30), x2 - (x2 + 140)) : Math.atan2(y2 - (y2 + 26), x2 - (x2 + 30));
+    const p = (r) => `${(x2 - 9 * Math.cos(ang + r)).toFixed(1)},${(y2 - 9 * Math.sin(ang + r)).toFixed(1)}`;
+    const path = $('path', svg);
+    path.setAttribute('d', `M${x1.toFixed(1)},${y1.toFixed(1)} ${c} M${x2},${y2} L${p(0.5)} M${x2},${y2} L${p(-0.5)}`);
+    return path;
+  };
+  safe(trazarCamino);
+  let ancho = innerWidth, tr;
+  addEventListener('resize', () => {
+    if (innerWidth === ancho) return; ancho = innerWidth; clearTimeout(tr);
+    tr = setTimeout(() => safe(() => { const p = trazarCamino(); if (p) gsap.set(p, { strokeDasharray: 'none', strokeDashoffset: 0, opacity: 1 }); }), 200);
+  });
+
+  // El buscador cambia de rubro (solo si se permite movimiento)
+  const giros = ['hamburgueserías', 'joyerías', 'cafeterías', 'barberías', 'estudios de uñas'];
+  const giro = $('[data-giro]');
+  if (giro && !RM) {
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % giros.length;
+      gsap.timeline()
+        .to(giro, { yPercent: -60, autoAlpha: 0, duration: 0.3, ease: 'power2.in' })
+        .add(() => { giro.textContent = giros[i]; })
+        .fromTo(giro, { yPercent: 60, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, duration: 0.45, ease: M.ease });
+    }, 2600);
+  }
+
+  const dibujar = (paths) => paths.map((p) => { const L = p.getTotalLength(); gsap.set(p, { strokeDasharray: L, strokeDashoffset: L, opacity: 0 }); return p; });
+
+  // 4. La firma de Gloz, dentro de la portada real
+  let palabras = [];
+  if (window.SplitText) palabras = $$('[data-palabras]').flatMap((el) => SplitText.create(el, { type: 'words', wordsClass: 'palabra' }).words);
+
+  const firmaPortada = () => {
+    const camino = trazarCamino();
+    const flechas = $$('[data-flechas] path');
+    gsap.set('.portada [data-hero-in]', { visibility: 'visible' });
+    const tl = gsap.timeline({ defaults: { ease: M.ease } });
+    tl.fromTo('[data-logo] .logo__pieza', { yPercent: 120, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, duration: M.dur, stagger: M.stagger }, 0)
+      .fromTo('.portada__links, .portada__nav .btn', { autoAlpha: 0, y: -12 }, { autoAlpha: 1, y: 0, duration: M.dur }, 0.2)
+      .fromTo(palabras.length ? palabras : '.portada__titulo', { autoAlpha: 0, y: 14, filter: 'blur(10px)' },
+        { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: M.dur * 1.1, stagger: M.stagger * 1.4 }, 0.15)
+      .fromTo('.portada [data-sube]', { autoAlpha: 0, y: M.dist }, { autoAlpha: 1, y: 0, duration: M.dur, stagger: M.stagger * 2 }, 0.55)
+      .fromTo('[data-pieza]', { autoAlpha: 0, y: 90, rotation: (i) => [-5, 4, 6][i] },
+        { autoAlpha: 1, y: 0, rotation: 0, duration: M.dur * 1.35, stagger: 0.12 }, 0.5)
+      .add(() => {}, 1.15)
+      .fromTo(dibujar(flechas), { strokeDashoffset: (i, p) => p.getTotalLength(), opacity: 1 }, { strokeDashoffset: 0, opacity: 1, duration: 0.75, stagger: 0.09, ease: M.easeIO }, 1.2)
+      .fromTo('[data-etiqueta]', { autoAlpha: 0, y: 6 }, { autoAlpha: 1, y: 0, duration: 0.5, stagger: 0.09 }, 1.45)
+      .fromTo('[data-buscador]', { autoAlpha: 0, scale: 0.9 }, { autoAlpha: 1, scale: 1, duration: 0.6, ease: M.pop }, 1.7);
+    if (camino) {
+      const L = camino.getTotalLength();
+      gsap.set(camino, { opacity: 0 });
+      tl.fromTo(camino, { strokeDasharray: L, strokeDashoffset: L, opacity: 1 }, { strokeDashoffset: 0, opacity: 1, duration: 0.9, ease: M.easeIO, immediateRender: false }, 1.85);
+    }
+    return tl;
+  };
+
+  // Se salta con un toque
+  const saltable = (tl) => {
+    const saltar = () => tl.progress(1);
+    setTimeout(() => {
+      d.addEventListener('pointerdown', saltar, { once: true });
+      d.addEventListener('keydown', saltar, { once: true });
+      tl.eventCallback('onComplete', () => { d.removeEventListener('pointerdown', saltar); d.removeEventListener('keydown', saltar); });
+    }, 0);
+  };
+
+  const repetir = $('[data-ver-de-nuevo]'), aviso = $('[data-aviso-rm]');
+  if (RM) {
+    if (aviso) aviso.hidden = false;
+    if (repetir) repetir.addEventListener('click', () => {
+      gsap.fromTo('.portada [data-hero-in], .camino', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.5, stagger: 0.06, ease: 'none' });
+    });
+    return;
+  }
+
+  // 5. Revelados de la hoja
+  const revelados = () => {
+    $$('[data-reveal]').forEach((el) => gsap.from(el, { autoAlpha: 0, y: M.dist, duration: M.dur, ease: M.ease, scrollTrigger: { trigger: el, start: 'top 88%', once: true } }));
+    if (window.SplitText) $$('[data-split]').forEach((el) => SplitText.create(el, {
+      type: 'lines', mask: 'lines', linesClass: 'linea', autoSplit: true,
+      onSplit: (self) => gsap.from(self.lines, { yPercent: 130, duration: M.dur, stagger: M.stagger, ease: M.ease, scrollTrigger: { trigger: el, start: 'top 88%', once: true } }),
+    }));
+    const diag = dibujar($$('[data-diagrama] path'));   // escondidas hasta que se dibujan
+    gsap.set('[data-diagrama] .etiqueta', { autoAlpha: 0 });
+    const diagTl = () => gsap.timeline()
+      .fromTo(dibujar(diag), { strokeDashoffset: (i, p) => p.getTotalLength(), opacity: 1 }, { strokeDashoffset: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: M.easeIO })
+      .fromTo('[data-diagrama] .etiqueta', { autoAlpha: 0, y: 6 }, { autoAlpha: 1, y: 0, duration: 0.5, stagger: 0.08, ease: M.ease }, 0.3);
+    let tDiag = null;
+    ScrollTrigger.create({ trigger: '[data-diagrama]', start: 'top 80%', once: true, onEnter: () => { tDiag = diagTl(); } });
+    const btnDiag = $('[data-ver-diagrama]');
+    if (btnDiag) btnDiag.addEventListener('click', () => { if (tDiag) tDiag.restart(); else tDiag = diagTl(); });
+  };
+
+  let tl = null;
+  Promise.race([d.fonts ? d.fonts.ready : Promise.resolve(), new Promise((r) => setTimeout(r, 1200))]).then(() => {
+    tl = safe(firmaPortada);
+    if (tl) saltable(tl);
+    safe(revelados);
+    ScrollTrigger.refresh();
+  });
+  if (repetir) repetir.addEventListener('click', () => { if (tl) { tl.restart(); saltable(tl); } });
+});
+</script>
+</body>
+</html>

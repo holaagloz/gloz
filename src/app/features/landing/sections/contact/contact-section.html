@@ -1,0 +1,81 @@
+<!-- ===== INICIO Contacto ===== -->
+<div class="contenedor grid">
+  <div class="intro">
+    <gloz-section-heading titleId="contacto-titulo">Cuéntanos de tu marca <em>y armamos el plan</em></gloz-section-heading>
+    <p class="entrada" glozReveal>Déjanos tu nombre y tu negocio: se abre WhatsApp con tu mensaje listo para enviar. Respondemos por ahí.</p>
+
+    <ul class="directo" glozReveal>
+      <li>
+        <span>WhatsApp</span>
+        <a [glozWhatsapp]="directMessage">{{ site.whatsappDisplay }}</a>
+      </li>
+      <li>
+        <span>Correo</span>
+        <a [href]="'mailto:' + site.email">{{ site.email }}</a>
+      </li>
+      <li>
+        <span>Instagram</span>
+        <a [href]="site.instagram.url" target="_blank" rel="noopener">{{ site.instagram.user }}</a>
+      </li>
+      <li>
+        <span>Dónde</span>
+        <p>{{ site.location }}</p>
+      </li>
+    </ul>
+  </div>
+
+  <form class="tarjeta" [formRoot]="contactForm" aria-label="Formulario de contacto" glozReveal>
+    @let nombreError = errorOf(contactForm.nombre);
+    <div class="campo">
+      <label for="c-nombre">Tu nombre <span class="req">obligatorio</span></label>
+      <input
+        id="c-nombre"
+        type="text"
+        autocomplete="name"
+        [formField]="contactForm.nombre"
+        [attr.aria-invalid]="nombreError ? 'true' : null"
+        [attr.aria-describedby]="nombreError ? 'c-nombre-error' : null"
+      />
+      @if (nombreError) {
+        <p class="error" id="c-nombre-error" role="alert">{{ nombreError }}</p>
+      }
+    </div>
+
+    @let negocioError = errorOf(contactForm.negocio);
+    <div class="campo">
+      <label for="c-negocio">Tu negocio o marca <span class="req">obligatorio</span></label>
+      <input
+        id="c-negocio"
+        type="text"
+        autocomplete="organization"
+        [formField]="contactForm.negocio"
+        [attr.aria-invalid]="negocioError ? 'true' : null"
+        [attr.aria-describedby]="negocioError ? 'c-negocio-error' : null"
+      />
+      @if (negocioError) {
+        <p class="error" id="c-negocio-error" role="alert">{{ negocioError }}</p>
+      }
+    </div>
+
+    <div class="campo">
+      <label for="c-interes">¿Qué te interesa?</label>
+      <select id="c-interes" [formField]="contactForm.interes">
+        <option value="">Elige una opción</option>
+        @for (option of interests; track option) {
+          <option [value]="option">{{ option }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="c-mensaje">Cuéntanos un poco más</label>
+      <textarea id="c-mensaje" rows="3" [formField]="contactForm.mensaje" placeholder="Qué vendes, qué te gustaría lograr…"></textarea>
+    </div>
+
+    <div class="acciones">
+      <button type="submit" glozButton>Enviar por WhatsApp</button>
+      <a class="correo" [href]="mailto()">Prefiero escribir por correo</a>
+    </div>
+  </form>
+</div>
+<!-- ===== FIN Contacto ===== -->

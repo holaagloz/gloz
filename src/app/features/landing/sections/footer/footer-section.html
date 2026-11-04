@@ -1,0 +1,37 @@
+<!-- ===== INICIO Pie de página ===== -->
+<div class="contenedor">
+  <div class="cierre">
+    <p class="frase">Detrás de cada post hay una <span class="acento">estrategia.</span></p>
+    <a glozButton variant="light" [glozWhatsapp]="message">Escríbenos</a>
+  </div>
+
+  <div class="firma-final" data-firma-final aria-hidden="true">
+    <gloz-logo class="gigante" [decorative]="true" />
+    @for (photo of photos; track photo.client; let i = $index) {
+      <div class="foto" [class]="'foto--' + i" data-foto-final>
+        <gloz-responsive-image [image]="photo.image" sizes="160px" />
+      </div>
+    }
+  </div>
+
+  <div class="pie">
+    <nav aria-label="Secciones">
+      <ul>
+        @for (link of links; track link.href) {
+          <li><a [href]="link.href">{{ link.label }}</a></li>
+        }
+      </ul>
+    </nav>
+    <ul class="contacto">
+      <li><a [glozWhatsapp]="message">WhatsApp {{ site.whatsappDisplay }}</a></li>
+      <li><a [href]="'mailto:' + site.email">{{ site.email }}</a></li>
+      <li><a [href]="site.instagram.url" target="_blank" rel="noopener">Instagram {{ site.instagram.user }}</a></li>
+    </ul>
+    <div class="legal">
+      <p>{{ site.location }}</p>
+      <p>© {{ year }} {{ site.name }}</p>
+      <a href="#">Volver arriba</a>
+    </div>
+  </div>
+</div>
+<!-- ===== FIN Pie de página ===== -->

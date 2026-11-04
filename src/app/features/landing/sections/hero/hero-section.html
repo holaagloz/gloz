@@ -1,0 +1,38 @@
+<!-- ===== INICIO Portada ===== -->
+<div class="marco sobre-azul">
+  <svg class="camino" data-camino aria-hidden="true" focusable="false"><path data-hero-trazo /></svg>
+
+  <nav class="nav" aria-label="Principal">
+    <a class="nav__logo" href="#" aria-label="Gloz Studio, inicio" data-logo data-hero-in>
+      <gloz-logo [decorative]="true" />
+    </a>
+    <ul class="nav__links" data-nav-in data-hero-in>
+      @for (link of links; track link.href) {
+        <li><a [href]="link.href">{{ link.label }}</a></li>
+      }
+    </ul>
+    <a glozButton variant="light" [small]="true" [arrow]="false" [glozWhatsapp]="message" data-nav-in data-hero-in>Escríbenos</a>
+  </nav>
+
+  <div class="grid">
+    <div class="texto">
+      <p class="ceja-portada" data-sube data-hero-in>{{ site.name }} · Marketing y software</p>
+      <h1 class="h1" data-hero-in data-palabras>
+        <span class="l1">Detrás de cada post</span>
+        <span class="l2">hay una</span>
+        <span class="l3">estrategia.</span>
+      </h1>
+      <p class="bajada" data-sube data-hero-in>
+        Campañas en Meta Ads, contenido que se nota y software a medida. Nos metemos en tu negocio como si fuera
+        nuestro: entendemos, proponemos y resolvemos.
+      </p>
+      <p class="confianza" data-sube data-hero-in>{{ site.brands }} marcas desde {{ site.since }} · {{ site.location }}</p>
+      <a class="accion" glozButton variant="light" [glozWhatsapp]="message" data-sube data-hero-in data-camino-hasta>Escríbenos por WhatsApp</a>
+    </div>
+
+    <gloz-hero-composition />
+  </div>
+
+  <p class="lado" aria-hidden="true">Marketing · Contenido · Software</p>
+</div>
+<!-- ===== FIN Portada ===== -->
