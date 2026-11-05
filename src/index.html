@@ -11,7 +11,7 @@
     />
     <meta name="theme-color" content="#024AA9" />
 
-    <!-- Al compartir el enlace (WhatsApp, redes). Pendiente: URL absoluta cuando haya dominio. -->
+    <!-- Al compartir el enlace (WhatsApp, redes). Si cambia la dirección, actualizar og:url y og:image. -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_LA" />
     <meta property="og:site_name" content="Gloz Studio" />
@@ -20,7 +20,8 @@
       property="og:description"
       content="Campañas en Meta Ads, contenido que se nota y software a medida para tu marca."
     />
-    <meta property="og:image" content="og-imagen.jpg" />
+    <meta property="og:url" content="https://holaagloz.github.io/gloz/" />
+    <meta property="og:image" content="https://holaagloz.github.io/gloz/og-imagen.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Gloz: detrás de cada post hay una estrategia" />
@@ -32,6 +33,10 @@
     <link rel="preload" href="fonts/montserrat-latin-var.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="fonts/yeseva-one-latin-400.woff2" as="font" type="font/woff2" crossorigin />
 
+    <style>
+      @font-face { font-family: 'Montserrat'; src: url('fonts/montserrat-latin-var.woff2') format('woff2'); font-weight: 300 800; font-display: swap; }
+      @font-face { font-family: 'Yeseva One'; src: url('fonts/yeseva-one-latin-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+    </style>
     <script>
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
     </script>

@@ -3,18 +3,7 @@
  * Colores: libro de marca (azul vivido, gris claro, azul oscuro) + dos apoyos derivados del azul.
  * Los valores de movimiento tienen su pareja en JS: src/app/core/motion/motion.tokens.ts
  */
-@font-face {
-  font-family: 'Montserrat';
-  src: url('/fonts/montserrat-latin-var.woff2') format('woff2');
-  font-weight: 300 800;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Yeseva One';
-  src: url('/fonts/yeseva-one-latin-400.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-}
+/* Las @font-face están en src/index.html (ruta relativa: respeta la ruta base de GitHub Pages). */
 
 :root {
   /* Color */

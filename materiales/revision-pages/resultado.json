@@ -1,0 +1,333 @@
+{
+  "revisado": "2026-11-04T21:59:55.467Z",
+  "sitio": "http://localhost:4301/gloz/",
+  "navegador": "Chrome/156.0.8078.80 (C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe)",
+  "resumen": {
+    "todoBien": false,
+    "revisar": [
+      "Celular sin JavaScript: 2 archivos no cargaron: chunk-ZSCIRYAZ.js (), chunk-DJXJIPSF.js ()"
+    ],
+    "nota": "La página mide 12,180 px en celular. La captura completa va a 1x para que no se repita; para leerla de cerca usa las capturas de la carpeta tramos."
+  },
+  "vistas": {
+    "celular": {
+      "tamaño": "375 x 812",
+      "capaQueTapa": null,
+      "capturas": {
+        "primeraPantalla": "celular-primera-pantalla.png",
+        "completa": "celular-completa.png",
+        "escalaCompleta": 1,
+        "tramos": [
+          {
+            "archivo": "tramos/celular-01.png",
+            "desde": 0,
+            "hasta": 1624
+          },
+          {
+            "archivo": "tramos/celular-02.png",
+            "desde": 1624,
+            "hasta": 3248
+          },
+          {
+            "archivo": "tramos/celular-03.png",
+            "desde": 3248,
+            "hasta": 4872
+          },
+          {
+            "archivo": "tramos/celular-04.png",
+            "desde": 4872,
+            "hasta": 6496
+          },
+          {
+            "archivo": "tramos/celular-05.png",
+            "desde": 6496,
+            "hasta": 8120
+          },
+          {
+            "archivo": "tramos/celular-06.png",
+            "desde": 8120,
+            "hasta": 9744
+          },
+          {
+            "archivo": "tramos/celular-07.png",
+            "desde": 9744,
+            "hasta": 11368
+          },
+          {
+            "archivo": "tramos/celular-08.png",
+            "desde": 11368,
+            "hasta": 12180
+          }
+        ]
+      },
+      "botonesEnPrimeraPantalla": [
+        {
+          "texto": "Gloz Studio, inicio",
+          "destino": "#",
+          "alto": 24
+        },
+        {
+          "texto": "Escríbenos",
+          "destino": "https://wa.me/50662652841?text=Hola%20Gloz%2C%20quiero%20informes%20para%20mi%20marca.",
+          "alto": 44
+        },
+        {
+          "texto": "Escríbenos por WhatsApp",
+          "destino": "https://wa.me/50662652841?text=Hola%20Gloz%2C%20quiero%20informes%20para%20mi%20marca.",
+          "alto": 52
+        }
+      ],
+      "altoPagina": 12180,
+      "anchoDocumento": 375,
+      "anchoVentana": 375,
+      "elementosFuera": [],
+      "cortadosEnElBorde": [],
+      "contenidoOculto": [],
+      "totalOcultos": 0,
+      "imagenesRotas": [],
+      "fuentes": {
+        "cargadas": [
+          "Montserrat",
+          "Yeseva One"
+        ],
+        "noCargaron": []
+      },
+      "librerias": {
+        "gsap": false,
+        "ScrollTrigger": false,
+        "SplitText": false,
+        "Lenis": false,
+        "lenisActivo": true
+      },
+      "titulo": "Gloz Studio · Marketing, contenido y software a medida",
+      "h1": [
+        "DETRÁS DE CADA POST HAY UNA estrategia."
+      ],
+      "erroresConsola": [],
+      "avisosConsola": [],
+      "archivosQueNoCargaron": []
+    },
+    "escritorio": {
+      "tamaño": "1440 x 900",
+      "capaQueTapa": null,
+      "capturas": {
+        "primeraPantalla": "escritorio-primera-pantalla.png",
+        "completa": "escritorio-completa.png",
+        "escalaCompleta": 0.6,
+        "tramos": [
+          {
+            "archivo": "tramos/escritorio-01.png",
+            "desde": 0,
+            "hasta": 1800
+          },
+          {
+            "archivo": "tramos/escritorio-02.png",
+            "desde": 1800,
+            "hasta": 3600
+          },
+          {
+            "archivo": "tramos/escritorio-03.png",
+            "desde": 3600,
+            "hasta": 5400
+          },
+          {
+            "archivo": "tramos/escritorio-04.png",
+            "desde": 5400,
+            "hasta": 7200
+          },
+          {
+            "archivo": "tramos/escritorio-05.png",
+            "desde": 7200,
+            "hasta": 9000
+          },
+          {
+            "archivo": "tramos/escritorio-06.png",
+            "desde": 9000,
+            "hasta": 10247
+          }
+        ]
+      },
+      "botonesEnPrimeraPantalla": [
+        {
+          "texto": "Gloz Studio, inicio",
+          "destino": "#",
+          "alto": 28
+        },
+        {
+          "texto": "Servicios",
+          "destino": "#servicios",
+          "alto": 46
+        },
+        {
+          "texto": "Trabajos",
+          "destino": "#trabajos",
+          "alto": 46
+        },
+        {
+          "texto": "Nosotros",
+          "destino": "#nosotros",
+          "alto": 46
+        },
+        {
+          "texto": "Contacto",
+          "destino": "#contacto",
+          "alto": 46
+        },
+        {
+          "texto": "Escríbenos",
+          "destino": "https://wa.me/50662652841?text=Hola%20Gloz%2C%20quiero%20informes%20para%20mi%20marca.",
+          "alto": 44
+        },
+        {
+          "texto": "Escríbenos por WhatsApp",
+          "destino": "https://wa.me/50662652841?text=Hola%20Gloz%2C%20quiero%20informes%20para%20mi%20marca.",
+          "alto": 52
+        }
+      ],
+      "altoPagina": 10247,
+      "anchoDocumento": 1440,
+      "anchoVentana": 1440,
+      "elementosFuera": [],
+      "cortadosEnElBorde": [],
+      "contenidoOculto": [],
+      "totalOcultos": 0,
+      "imagenesRotas": [],
+      "fuentes": {
+        "cargadas": [
+          "Montserrat",
+          "Yeseva One"
+        ],
+        "noCargaron": []
+      },
+      "librerias": {
+        "gsap": false,
+        "ScrollTrigger": false,
+        "SplitText": false,
+        "Lenis": false,
+        "lenisActivo": true
+      },
+      "titulo": "Gloz Studio · Marketing, contenido y software a medida",
+      "h1": [
+        "DETRÁS DE CADA POST HAY UNA estrategia."
+      ],
+      "erroresConsola": [],
+      "avisosConsola": [],
+      "archivosQueNoCargaron": []
+    },
+    "celular-reducir-movimiento": {
+      "tamaño": "375 x 812",
+      "capaQueTapa": null,
+      "capturas": {
+        "primeraPantalla": "celular-reducir-movimiento-primera-pantalla.png"
+      },
+      "botonesEnPrimeraPantalla": [
+        {
+          "texto": "Gloz Studio, inicio",
+          "destino": "#",
+          "alto": 24
+        },
+        {
+          "texto": "Escríbenos",
+          "destino": "https://wa.me/50662652841?text=Hola%20Gloz%2C%20quiero%20informes%20para%20mi%20marca.",
+          "alto": 44
+        },
+        {
+          "texto": "Escríbenos por WhatsApp",
+          "destino": "https://wa.me/50662652841?text=Hola%20Gloz%2C%20quiero%20informes%20para%20mi%20marca.",
+          "alto": 52
+        }
+      ],
+      "altoPagina": 12126,
+      "anchoDocumento": 375,
+      "anchoVentana": 375,
+      "elementosFuera": [],
+      "cortadosEnElBorde": [],
+      "contenidoOculto": [],
+      "totalOcultos": 0,
+      "imagenesRotas": [],
+      "fuentes": {
+        "cargadas": [
+          "Montserrat",
+          "Yeseva One"
+        ],
+        "noCargaron": []
+      },
+      "librerias": {
+        "gsap": false,
+        "ScrollTrigger": false,
+        "SplitText": false,
+        "Lenis": false,
+        "lenisActivo": false
+      },
+      "titulo": "Gloz Studio · Marketing, contenido y software a medida",
+      "h1": [
+        "DETRÁS DE CADA POST HAY UNA estrategia."
+      ],
+      "erroresConsola": [],
+      "avisosConsola": [],
+      "archivosQueNoCargaron": []
+    },
+    "celular-sin-javascript": {
+      "tamaño": "375 x 812",
+      "capaQueTapa": null,
+      "capturas": {
+        "primeraPantalla": "celular-sin-javascript-primera-pantalla.png"
+      },
+      "botonesEnPrimeraPantalla": [
+        {
+          "texto": "Gloz Studio, inicio",
+          "destino": "#",
+          "alto": 24
+        },
+        {
+          "texto": "Escríbenos",
+          "destino": "https://wa.me/50662652841?text=Hola%20Gloz%2C%20quiero%20informes%20para%20mi%20marca.",
+          "alto": 44
+        },
+        {
+          "texto": "Escríbenos por WhatsApp",
+          "destino": "https://wa.me/50662652841?text=Hola%20Gloz%2C%20quiero%20informes%20para%20mi%20marca.",
+          "alto": 52
+        }
+      ],
+      "altoPagina": 12126,
+      "anchoDocumento": 375,
+      "anchoVentana": 375,
+      "elementosFuera": [],
+      "cortadosEnElBorde": [],
+      "contenidoOculto": [],
+      "totalOcultos": 0,
+      "imagenesRotas": [],
+      "fuentes": {
+        "cargadas": [
+          "Montserrat",
+          "Yeseva One"
+        ],
+        "noCargaron": []
+      },
+      "librerias": {
+        "gsap": false,
+        "ScrollTrigger": false,
+        "SplitText": false,
+        "Lenis": false,
+        "lenisActivo": false
+      },
+      "titulo": "Gloz Studio · Marketing, contenido y software a medida",
+      "h1": [
+        "DETRÁS DE CADA POST HAY UNA estrategia."
+      ],
+      "erroresConsola": [],
+      "avisosConsola": [],
+      "archivosQueNoCargaron": [
+        {
+          "archivo": "http://localhost:4301/gloz/chunk-ZSCIRYAZ.js",
+          "error": ""
+        },
+        {
+          "archivo": "http://localhost:4301/gloz/chunk-DJXJIPSF.js",
+          "error": ""
+        }
+      ]
+    }
+  }
+}
