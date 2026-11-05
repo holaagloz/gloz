@@ -1,0 +1,247 @@
+:host {
+  display: block;
+  background: var(--surface);
+}
+.cabeza {
+  display: grid;
+  gap: 8px;
+  margin-bottom: clamp(36px, 5vw, 60px);
+}
+.grupos {
+  display: grid;
+  gap: 56px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.grupo {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+  scroll-margin-top: 24px;
+}
+
+/* Imagen de cada área */
+.visual {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+}
+.visual svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.visual path,
+.visual rect {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.visual circle {
+  fill: #fff;
+}
+.visual .etiqueta {
+  translate: -50% -50%;
+  color: #fff;
+  font-size: 12px;
+}
+.visual--software .acento {
+  stroke: var(--brand-on-dark);
+  stroke-width: 2.4;
+}
+.visual--contenido {
+  background-color: var(--bg);
+  background-image: var(--tx-acanalado);
+}
+.foto {
+  position: absolute;
+  top: 50%;
+  width: 34%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 3px solid #fff;
+  border-radius: var(--r-sm);
+  box-shadow: 0 20px 30px -18px rgb(23 37 71 / 60%);
+}
+.foto--0 {
+  left: 10%;
+  translate: 0 -46%;
+  rotate: -7deg;
+}
+.foto--1 {
+  left: 33%;
+  z-index: 1;
+  translate: 0 -54%;
+}
+.foto--2 {
+  left: 56%;
+  translate: 0 -46%;
+  rotate: 6deg;
+}
+
+/* Texto */
+h3 {
+  margin: 0 0 6px;
+  font-size: clamp(22px, 2.2vw, 28px);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+}
+.resumen {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+/* Lista contraída: se abre con "Ver qué incluye" */
+.detalle {
+  border-top: 1px solid var(--line);
+}
+.detalle summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 4px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brand);
+  list-style: none;
+  cursor: pointer;
+}
+.detalle summary::-webkit-details-marker {
+  display: none;
+}
+.detalle summary svg {
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: rotate var(--t-hover) var(--ease);
+}
+.detalle[open] summary svg {
+  rotate: 180deg;
+}
+.detalle summary:hover .abrir,
+.detalle summary:hover .cerrar {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.detalle .cerrar,
+.detalle[open] .abrir {
+  display: none;
+}
+.detalle[open] .cerrar {
+  display: inline;
+}
+.items {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  margin: 0;
+  padding: 6px 0 4px;
+  list-style: none;
+}
+.detalle[open] .items {
+  animation: desplegar 0.45s var(--ease) both;
+}
+@keyframes desplegar {
+  from {
+    opacity: 0;
+    translate: 0 -8px;
+  }
+}
+.items li {
+  display: grid;
+  gap: 2px;
+}
+.items b {
+  font-size: 15px;
+  line-height: 1.35;
+}
+.items span {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.items .nota {
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  background: var(--brand-soft);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.items .nota a {
+  display: block;
+  margin-top: 8px;
+  color: var(--brand);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.items .nota a::after {
+  content: ' →';
+}
+.cta {
+  justify-self: start;
+}
+.medida {
+  margin: clamp(40px, 5vw, 56px) 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detalle[open] .items {
+    animation: none;
+  }
+  .detalle summary svg {
+    transition: none;
+  }
+}
+@media (min-width: 760px) and (max-width: 1079px) {
+  .grupos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 56px 32px;
+  }
+}
+@media (min-width: 1080px) {
+  .cabeza {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: end;
+    gap: 48px;
+  }
+  .grupos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  /* Mismas filas en las tres columnas: imagen, título, botón y lista alineados.
+     La lista va al final: al abrir una, las otras columnas no se mueven. */
+  .grupo {
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    gap: 22px;
+    padding: 0 28px;
+    border-left: 1px solid var(--line);
+  }
+  .grupo:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .grupo:last-child {
+    padding-right: 0;
+  }
+}

@@ -11,7 +11,7 @@ export const PROCESS_STEPS: readonly ProcessStep[] = [
 
 /** Fuente: AboutUs.md. Fecha de los datos: noviembre de 2026. */
 export const TRUST_FACTS: readonly TrustFact[] = [
-  { figure: `Desde ${SITE.since}`, text: 'construyendo experiencia en marketing, contenido y publicidad digital.' },
+  { figure: `Desde ${SITE.since}`, text: 'construyendo experiencia en software, marketing, contenido y publicidad digital.' },
   { figure: `${SITE.brands} marcas`, text: 'de distintos rubros, cada una con su propio desafío.' },
   { figure: 'Hoy', text: 'llevamos la publicidad digital de Sillón Tech, en Argentina: campañas, análisis y seguimiento.' },
   {
@@ -35,7 +35,7 @@ export const BEHIND_LABELS = [
  */
 export const TESTIMONIAL: Testimonial = {
   quote:
-    'La verdad, me gusta mucho todo lo que han trabajado con nosotros. Me gustan mucho las ideas que nos han dado, las ediciones. Está muy bueno el trabajo que han hecho. Me ha encantado el contenido, las campañas y los nuemeros que hemos logrado.',
+    'La verdad, estamos muy contentos con el trabajo que han realizado. Nos han encantado sus ideas, la calidad del contenido y la creatividad en cada campaña. Además, los resultados que hemos conseguido han sido muy positivos. Estamos muy satisfechos con todo lo que hemos logrado juntos.',
   author: 'Dayanna Jara',
   role: 'CEO de Sillón Tech · Argentina',
   source: 'Mayo de 2026',

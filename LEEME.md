@@ -29,13 +29,17 @@ Todo el contenido vive en `src/app/data/`. Las secciones solo lo pintan.
 |---|---|
 | WhatsApp, correo, Instagram, ubicación, mensajes de cada botón, rubros del buscador | `src/app/data/site.data.ts` |
 | Servicios (nombres, descripciones, botón y mensaje de cada grupo) | `src/app/data/services.data.ts` |
-| Casos de trabajo (texto, servicios, fotos, video) | `src/app/data/cases.data.ts` |
+| Portafolio (fotos, videos, diseño y campañas, con su filtro) | `src/app/data/work.data.ts` |
+| Ejemplo de software (app de Viejos Barbería: textos y funciones) | `src/app/data/software.data.ts` |
+| "Qué hicimos con cada marca" (sector y servicios por cliente) | `src/app/data/cases.data.ts` |
 | Logos de clientes | `src/app/data/clients.data.ts` + el PNG en `public/img/logos/` |
 | Pasos del proceso, datos de confianza, etiquetas del diagrama | `src/app/data/about.data.ts` |
 | Fotos de la portada y sus etiquetas | `src/app/data/hero.data.ts` |
 | Orden de las secciones | `src/app/features/landing/landing.page.ts` |
 | Testimonio | `TESTIMONIAL` en `src/app/data/about.data.ts` |
 | Título y descripción para Google y al compartir | `src/index.html` |
+
+**Originales:** las fotos y videos sin achicar van en `materiales/originales/` (nunca en `public/`, porque todo lo de `public/` se sube a la web). Ahí está `nuevas/`, con el material que agregaste el 4 de noviembre de 2026.
 
 **Fotos nuevas:** cada foto va en WebP con su ancho en el nombre (`cafe-560.webp`, `cafe-960.webp`), en proporción 4:5. Las de apoyo van en 360 px.
 
@@ -160,7 +164,18 @@ Pana, acanalado y grano en SVG/CSS muy livianos, con opacidad de 3 a 7 %.
 15. Sillón Tech aparece con su logo sobre tu azul y lo que llevan (Estrategia, Campañas, Análisis, Seguimiento), sin fotos.
 16. **Testimonio de Dayanna Jara:** uní sus mensajes de WhatsApp con sus propias palabras (solo recorté y corregí "me gusta las ideas" a "me gustan las ideas"). Dejé afuera "gracias chicas! son unas geniaa". Confírmale que sale publicado con su nombre y su cargo.
 
+17. **Rediseño del 4 de noviembre de 2026 (auditoría UX/UI):** orden nuevo (Portada → Servicios → Trabajos → Marcas → Nosotros → Proceso → Confianza → Contacto); portada con las tres áreas como enlaces; Servicios en tres columnas del mismo peso con el título "Marketing, contenido y software a medida"; el grupo 03 se llama ahora **"Software a medida"** (antes "Desarrollo digital"); Trabajos pasó a ser un portafolio con filtro (Videos, Fotografía, Diseño, Campañas) y 2 reels nuevos de Tienda del Oro.
+18. Frase nueva en la columna de software: "Cuéntanos qué tarea te quita tiempo o qué proceso se te desordena, y te proponemos cómo resolverlo con software."
+19. **Portafolio con más clientes (4 de noviembre de 2026):** entran 3 videos (2 de Sillón Tech y el del equipo de Santillán Rafaniello), 5 piezas (foto del sillón terracota, carrusel "Novedades de Italia", foto de la oficina del estudio, "¿Tienes un problema?" e historia "Domingo" de Burguer House) y el logo de Viejos Barbería en dorado. Salen el segundo reel de Tienda del Oro, el anillo de diamantes, la hamburguesa con huevo y el logo de Burguer House: repetían marca. Quedan 18 piezas de 6 marcas.
+20. **Ejemplo de software (5 de noviembre de 2026):** "La app de Viejos Barbería", al inicio de Trabajos, presentada como uno de los sistemas que han desarrollado (no el único). Es una app para el celular que se instala desde el navegador (PWA), hecha a la medida del único barbero que la administra. Muestra el video, sus 3 funciones (reserva en línea con Google, panel del barbero y recordatorios), lo que hicimos (logo, íconos, diseño, desarrollo y app para celular) y el botón "Quiero un app así". Sin capturas ni marcadores. La columna de software de Servicios enlaza a este ejemplo.
+23. **Servicios contraídos (5 de noviembre de 2026):** cada área muestra su imagen, título, frase y botón de cotizar; la lista de servicios se abre con "Ver qué incluye". Usa el desplegable propio del navegador, así funciona sin JavaScript y con lectores de pantalla. El botón de cotizar va antes de la lista para que, al abrir una, las otras columnas no se muevan.
+21. **Santillán Rafaniello:** "Estudio jurídico · Derecho de nacionalidad" (sale de su logo) y sus servicios (videos institucionales, fotografía y diseño gráfico) los deduje del material. Los videos van sin audio, como pediste.
+22. Sillón Tech suma "Videos de producto" y "Fotografía" a sus servicios. El buscador de la portada suma "estudios jurídicos" y "tiendas de muebles".
+
 ## Pendientes
+
+- [ ] *(Opcional)* Sumar otro ejemplo de software (video o capturas + qué resolvía), para que se vea más de un desarrollo.
+- [ ] Confirmar con Viejos Barbería que se puede mostrar su app (y con Santillán Rafaniello el carrusel y la foto de la oficina).
 
 - [ ] Confirmar con Dayanna Jara que está de acuerdo en que su mensaje se publique con su nombre y cargo.
 - [ ] **Dirección pública:** por ahora no hay dominio. Al publicar en Netlify con nombre propio (por ejemplo `glozstudio.netlify.app`), cambiar en `src/index.html` `og:image` por la URL completa y agregar `og:url`, y generar el QR hacia esa dirección. Si después compran dominio, se conecta en Netlify y la dirección .netlify.app sigue funcionando, así que el QR impreso no se rompe.

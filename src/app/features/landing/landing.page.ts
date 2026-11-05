@@ -12,7 +12,7 @@ import { WorkSection } from './sections/work/work-section';
 
 /**
  * Landing de Gloz Studio. Cada sección es un bloque independiente: se pueden reordenar aquí
- * sin tocar nada más. Orden aprobado el 4 de noviembre de 2026.
+ * sin tocar nada más. Orden del 4 de noviembre de 2026: primero qué hacemos y cómo se ve, después la confianza.
  */
 @Component({
   selector: 'gloz-landing-page',
@@ -34,10 +34,10 @@ import { WorkSection } from './sections/work/work-section';
       <gloz-hero-section />
     </header>
     <main id="contenido">
-      <gloz-brands-section />
-      <gloz-behind-section />
       <gloz-services-section />
       <gloz-work-section />
+      <gloz-brands-section />
+      <gloz-behind-section />
       <gloz-process-section />
       <gloz-trust-section />
       <gloz-contact-section />

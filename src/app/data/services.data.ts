@@ -4,9 +4,8 @@ import { ServiceGroup } from '../models/content.models';
 export const SERVICE_GROUPS: readonly ServiceGroup[] = [
   {
     id: 'marketing',
-    number: '01',
     title: 'Marketing y publicidad',
-    summary: 'Campañas que buscan ventas, no solo likes.',
+    summary: 'Campañas en Meta Ads que buscan ventas, no solo likes.',
     cta: 'Cotizar marketing',
     whatsappMessage: 'Hola Gloz, quiero cotizar Marketing y publicidad. ¿Qué información necesitan?',
     items: [
@@ -26,9 +25,8 @@ export const SERVICE_GROUPS: readonly ServiceGroup[] = [
   },
   {
     id: 'contenido',
-    number: '02',
     title: 'Contenido y creatividad',
-    summary: 'De la idea a la pieza publicada.',
+    summary: 'Fotos, videos, diseño y guiones: de la idea a la pieza publicada.',
     cta: 'Cotizar contenido',
     whatsappMessage: 'Hola Gloz, quiero cotizar Contenido y creatividad. ¿Qué información necesitan?',
     items: [
@@ -42,9 +40,8 @@ export const SERVICE_GROUPS: readonly ServiceGroup[] = [
   },
   {
     id: 'software',
-    number: '03',
-    title: 'Desarrollo digital',
-    summary: 'Software hecho para cómo trabaja tu negocio.',
+    title: 'Software a medida',
+    summary: 'Sistemas y herramientas hechos para cómo trabaja tu negocio, no al revés.',
     cta: 'Cotizar software',
     whatsappMessage: 'Hola Gloz, quiero cotizar un desarrollo de software a medida. ¿Qué información necesitan?',
     items: [

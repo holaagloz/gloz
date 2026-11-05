@@ -45,7 +45,7 @@ import { SectionHeadingComponent } from '../../../../shared/ui/section-heading/s
     .logos {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      gap: 8px;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -53,7 +53,7 @@ import { SectionHeadingComponent } from '../../../../shared/ui/section-heading/s
     li {
       display: grid;
       place-items: center;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 2 / 1;
       border-radius: var(--r-md);
       background: var(--surface);
       color: var(--ink);
@@ -79,6 +79,9 @@ import { SectionHeadingComponent } from '../../../../shared/ui/section-heading/s
       .logos {
         grid-template-columns: repeat(5, 1fr);
         gap: 14px;
+      }
+      li {
+        aspect-ratio: 16 / 10;
       }
     }
   `,
