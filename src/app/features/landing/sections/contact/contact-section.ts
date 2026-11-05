@@ -18,7 +18,7 @@ interface ContactModel {
 const INTERESTS: readonly Exclude<ServiceInterest, ''>[] = [
   'Marketing y publicidad',
   'Contenido y creatividad',
-  'Desarrollo digital',
+  'Software a medida',
   'Todavía no sé',
 ];
 

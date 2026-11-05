@@ -79,14 +79,6 @@
   gap: 28px;
   padding-top: 22px;
 }
-.ceja-portada {
-  margin: 0 0 14px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--on-brand-soft);
-}
 .h1 {
   margin: 0;
   font-weight: 800;
@@ -120,6 +112,44 @@
   margin: 18px 0 0;
   font-size: clamp(15px, 1.25vw, 17px);
   color: var(--bg);
+}
+.areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.areas a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px 0 11px;
+  border: 1px solid rgb(255 255 255 / 40%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 8%);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background-color var(--t-hover) var(--ease),
+    border-color var(--t-hover) var(--ease);
+}
+.areas a:hover {
+  border-color: #fff;
+  background: rgb(255 255 255 / 16%);
+}
+.areas svg {
+  width: 17px;
+  height: 17px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 .accion {
   position: relative;
@@ -165,10 +195,6 @@
     align-items: center;
     gap: 40px;
     padding: 0 0 min(4vh, 32px);
-  }
-  .ceja-portada {
-    font-size: 12px;
-    letter-spacing: 0.16em;
   }
   .lado {
     display: block;

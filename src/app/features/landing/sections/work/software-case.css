@@ -1,0 +1,122 @@
+:host {
+  display: grid;
+  gap: 28px;
+  margin-bottom: clamp(48px, 7vw, 88px);
+  padding: clamp(16px, 2.4vw, 28px);
+  border: 1px solid var(--line-on-dark);
+  border-radius: var(--r-xl);
+  background: rgb(255 255 255 / 4%);
+  scroll-margin-top: 24px;
+}
+
+/* El app en una ventana de navegador */
+.marco {
+  overflow: hidden;
+  border-radius: var(--r-md);
+  background: #0c0c0d;
+  box-shadow: 0 30px 50px -30px rgb(0 0 0 / 80%);
+}
+.barra {
+  display: flex;
+  gap: 6px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+}
+.barra i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 22%);
+}
+.video {
+  aspect-ratio: 1280 / 586;
+  height: auto;
+}
+.ejemplo {
+  margin: 14px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgb(237 242 241 / 80%);
+}
+
+/* Texto */
+.texto {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 16px;
+}
+h3 {
+  margin: 0;
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 800;
+  line-height: 1.05;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.estado {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: -4px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand-on-dark);
+}
+.punto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 4px rgb(74 222 128 / 18%);
+}
+.resumen {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.funciones {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  margin: 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--line-on-dark);
+  list-style: none;
+}
+.funciones li {
+  display: grid;
+  gap: 2px;
+}
+.funciones b {
+  font-size: 15px;
+}
+.funciones span {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgb(237 242 241 / 80%);
+}
+.hicimos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.hicimos li {
+  padding: 4px 10px;
+  border: 1px solid rgb(255 255 255 / 40%);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (min-width: 960px) {
+  :host {
+    grid-template-columns: 1.55fr 1fr;
+    align-items: center;
+    gap: 40px;
+  }
+}

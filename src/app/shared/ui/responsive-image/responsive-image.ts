@@ -13,7 +13,7 @@ import { ResponsiveImage } from '../../../models/content.models';
       [sizes]="sizes()"
       [loaderParams]="{ base: image().widths[0] }"
       [width]="image().widths[0]"
-      [height]="image().widths[0] * 1.25"
+      [height]="image().widths[0] * (image().ratio ?? 1.25)"
       [alt]="image().alt"
       [priority]="priority()"
     />

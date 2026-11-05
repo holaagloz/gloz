@@ -16,16 +16,25 @@
 
   <div class="grid">
     <div class="texto">
-      <p class="ceja-portada" data-sube data-hero-in>{{ site.name }} · Marketing y software</p>
       <h1 class="h1" data-hero-in data-palabras>
         <span class="l1">Detrás de cada post</span>
         <span class="l2">hay una</span>
         <span class="l3">estrategia.</span>
       </h1>
       <p class="bajada" data-sube data-hero-in>
-        Campañas en Meta Ads, contenido que se nota y software a medida. Nos metemos en tu negocio como si fuera
-        nuestro: entendemos, proponemos y resolvemos.
+        Somos un estudio de marketing y desarrollo de software. Llevamos tus campañas, producimos tus fotos y videos, y
+        creamos el software que tu negocio necesita.
       </p>
+      <ul class="areas" aria-label="Lo que hacemos" data-sube data-hero-in>
+        @for (area of areas; track area.href) {
+          <li>
+            <a [href]="area.href">
+              <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path [attr.d]="area.icon" /></svg>
+              {{ area.label }}
+            </a>
+          </li>
+        }
+      </ul>
       <p class="confianza" data-sube data-hero-in>{{ site.brands }} marcas desde {{ site.since }} · {{ site.location }}</p>
       <a class="accion" glozButton variant="light" [glozWhatsapp]="message" data-sube data-hero-in data-camino-hasta>Escríbenos por WhatsApp</a>
     </div>

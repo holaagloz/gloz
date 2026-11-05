@@ -54,7 +54,7 @@ import { SectionHeadingComponent } from '../../../../shared/ui/section-heading/s
       position: relative;
       margin: 32px 0 0;
       padding: 0 0 0 22px;
-      border-left: 2px solid var(--brand);
+      border-left: 1px solid var(--brand);
     }
     .comillas {
       display: block;

@@ -35,5 +35,7 @@ export const SEARCH_TOPICS = [
   'joyerías',
   'cafeterías',
   'barberías',
+  'estudios jurídicos',
+  'tiendas de muebles',
   'estudios de uñas',
 ] as const;

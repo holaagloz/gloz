@@ -1,0 +1,85 @@
+<!-- ===== INICIO Servicios ===== -->
+<div class="contenedor">
+  <div class="cabeza">
+    <gloz-section-heading titleId="servicios-titulo">Marketing, contenido <em>y software a medida</em></gloz-section-heading>
+    <p class="entrada" glozReveal>Tres áreas, un mismo equipo. Puedes contratar una sola o combinarlas: la campaña, las piezas que la mueven y el sistema que ordena tu negocio.</p>
+  </div>
+
+  <ul class="grupos">
+    @for (group of groups; track group.id; let i = $index) {
+      <li class="grupo" [id]="'servicio-' + group.id" glozReveal [revealDelay]="i * 0.08">
+        @switch (group.id) {
+          @case ('marketing') {
+            <figure class="visual visual--marketing sobre-azul" glozDrawOnScroll aria-hidden="true">
+              <svg viewBox="0 0 320 200" focusable="false">
+                <path data-trazo d="M34 172 C 92 168 120 128 160 104 S 236 66 282 34" />
+                <path data-trazo d="M282 34 l-12 1 M282 34 l-3 12" />
+                <circle cx="34" cy="172" r="4" />
+                <circle cx="160" cy="104" r="4" />
+              </svg>
+              <span class="etiqueta" data-trazo-etiqueta style="left: 20%; top: 64%">Estrategia</span>
+              <span class="etiqueta" data-trazo-etiqueta style="left: 46%; top: 30%">Campaña en Meta Ads</span>
+              <span class="etiqueta" data-trazo-etiqueta style="left: 74%; top: 10%">Análisis</span>
+            </figure>
+          }
+          @case ('contenido') {
+            <figure class="visual visual--contenido" aria-hidden="true">
+              @for (piece of pieces; track piece.client; let j = $index) {
+                <gloz-responsive-image class="foto" [class]="'foto--' + j" [image]="piece.image" sizes="140px" />
+              }
+            </figure>
+          }
+          @case ('software') {
+            <figure class="visual visual--software oscuro" glozDrawOnScroll aria-hidden="true">
+              <svg viewBox="0 0 320 200" focusable="false">
+                <rect data-trazo x="58" y="36" width="204" height="128" rx="10" />
+                <path data-trazo d="M58 56 H262" />
+                <path data-trazo d="M110 56 V164" />
+                <path data-trazo d="M72 74 h24 M72 90 h20 M72 106 h24 M72 122 h16" />
+                <path data-trazo d="M126 74 h86" />
+                <rect data-trazo x="126" y="86" width="56" height="32" rx="5" />
+                <rect data-trazo x="190" y="86" width="56" height="32" rx="5" />
+                <path data-trazo d="M126 134 h120 M126 148 h66" />
+                <path data-trazo class="acento" d="M208 144 l7 7 l16-16" />
+                <path data-trazo d="M94 20 C 110 22 112 42 96 64 M96 64 l1-9 M96 64 l8-4" />
+                <path data-trazo d="M224 186 C 208 184 206 172 214 158 M214 158 l-1 9 M214 158 l7 5" />
+              </svg>
+              <span class="etiqueta" data-trazo-etiqueta style="left: 15%; top: 10%">Tus procesos</span>
+              <span class="etiqueta" data-trazo-etiqueta style="left: 84%; top: 92%">Tus objetivos</span>
+            </figure>
+          }
+        }
+
+        <div class="texto">
+          <h3 [id]="'servicio-' + group.id + '-titulo'">{{ group.title }}</h3>
+          <p class="resumen">{{ group.summary }}</p>
+        </div>
+
+        <a class="cta" glozButton [small]="true" [glozWhatsapp]="group.whatsappMessage">{{ group.cta }}</a>
+
+        <details class="detalle" (toggle)="onToggle()">
+          <summary>
+            <span class="abrir">Ver qué incluye</span><span class="cerrar">Ocultar</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 8l5 5 5-5" /></svg>
+          </summary>
+          <ul class="items">
+            @for (item of group.items; track item.name) {
+              <li>
+                <b>{{ item.name }}</b>
+                <span>{{ item.description }}</span>
+              </li>
+            }
+            @if (group.id === 'software') {
+              <li class="nota">
+                Cuéntanos qué tarea te quita tiempo o qué proceso se te desordena, y te proponemos cómo resolverlo con software.
+                <a href="#caso-software">Mira un ejemplo: la app de Viejos Barbería</a>
+              </li>
+            }
+          </ul>
+        </details>
+      </li>
+    }
+  </ul>
+  <p class="medida" glozReveal>Cada propuesta es a la medida: depende de lo que necesitas y por cuánto tiempo.</p>
+</div>
+<!-- ===== FIN Servicios ===== -->

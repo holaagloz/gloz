@@ -25,6 +25,12 @@ export class HeroSection {
   protected readonly site = SITE;
   protected readonly links = NAV_LINKS;
   protected readonly message = WHATSAPP_MESSAGES.hero;
+  /** Las tres áreas a la vista desde el primer segundo, cada una lleva a su columna en Servicios. */
+  protected readonly areas = [
+    { label: 'Publicidad digital', href: '#servicio-marketing', icon: 'M3 15 8 9.5l3 3L17 5M12 5h5v5' },
+    { label: 'Fotos, videos y diseño', href: '#servicio-contenido', icon: 'M2.5 6.5h3l1.5-2h6l1.5 2h3v9h-15zM10 13.5a2.6 2.6 0 1 0 0-5.2 2.6 2.6 0 0 0 0 5.2' },
+    { label: 'Software a medida', href: '#servicio-software', icon: 'M7 6 3 10l4 4M13 6l4 4-4 4M11 4.5 9 15.5' },
+  ] as const;
 
   constructor() {
     motionEffect((motion) => {
